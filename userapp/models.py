@@ -21,8 +21,13 @@ class CustomBaseModel(models.Model):
 
 class CustomUser(AbstractUser, CustomBaseModel):
     email = models.EmailField(unique=True, verbose_name='Email')
-    birthday_date = models.DateTimeField(**NULLABLE, verbose_name='Birthday date')
+    birthday_date = models.DateField(**NULLABLE, verbose_name='Birthday date')
 
 # TODO: описать сущность резюме после утверждения формы хранения и отображения
 # class Resume(CustomBaseModel):
 #     user = models.ManyToManyField(CustomUser, verbose_name='User')
+
+
+# TODO: описать сущность вакансий после получения и согласования данных по ним
+# class Vacancy(CustomBaseModel):
+#     pass
