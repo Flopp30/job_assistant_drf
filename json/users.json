@@ -1,0 +1,66 @@
+[
+  {
+    "username": "DarkSide",
+    "password": "1111",
+    "first_name": "Daniil",
+    "last_name": "Gusevskii",
+    "email": "test@django.local",
+    "birthday_date": "1993-12-11"
+  },
+  {
+    "username": "LightSide",
+    "password": "1111",
+    "first_name": "Kirill",
+    "last_name": "Shamilev",
+    "email": "test1@django.local",
+    "birthday_date": "1995-12-30"
+  },
+  {
+    "username": "HoMM",
+    "password": "1111",
+    "first_name": "Ivan",
+    "last_name": "Abramov",
+    "email": "test2@django.local",
+    "birthday_date": "1983-05-20"
+  },
+  {
+    "username": "VaK",
+    "password": "1111",
+    "first_name": "Alexey",
+    "last_name": "Fiksov",
+    "email": "test3@django.local",
+    "birthday_date": "1966-03-09"
+  },
+  {
+    "username": "Bleed",
+    "password": "1111",
+    "first_name": "Phill",
+    "last_name": "Ranjin",
+    "email": "test4@django.local",
+    "birthday_date": "1993-12-11"
+  },
+  {
+    "username": "SnakieBird",
+    "password": "1111",
+    "first_name": "Karina",
+    "last_name": "Fillipova",
+    "email": "test5@django.local",
+    "birthday_date": "1991-05-26"
+  },
+  {
+    "username": "Dragon",
+    "password": "1111",
+    "first_name": "Dmitrii",
+    "last_name": "Prusihin",
+    "email": "test6@django.local",
+    "birthday_date": "1981-04-12"
+  },
+  {
+    "username": "Apostol",
+    "password": "1111",
+    "first_name": "Vlad",
+    "last_name": "Ten",
+    "email": "test7@django.local",
+    "birthday_date": "1996-03-09"
+  }
+]
