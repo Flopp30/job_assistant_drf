@@ -6,6 +6,8 @@ NULLABLE = {'blank': True, 'null': True}
 
 
 class CustomBaseModel(models.Model):
+    """Измененная базовая модель. Используй её для создания всех новых моделей."""
+
     # id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created', editable=False)
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated', editable=False)
@@ -20,36 +22,52 @@ class CustomBaseModel(models.Model):
 
 
 class CustomUser(AbstractUser, CustomBaseModel):
+    """Измененная модель пользователя."""
+
     email = models.EmailField(primary_key=True, unique=True, verbose_name='Email')
     birthday_date = models.DateField(**NULLABLE, verbose_name='Birthday date')
 
 
 class ProfessionalRole(CustomBaseModel):
+    """"Модель позиции (должности) человека на работе/проекте."""
+
     name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=50)
 
 
 class Employment(CustomBaseModel):
+    """"Модель вида занятости (стажировка, частичная занятость, полная занятость и другие)."""
+
     name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=50)
 
 
 class Schedule(CustomBaseModel):
+    """"Модель графика работы (полный день, удаленка, гибкий график и другие)."""
+
     name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=50)
 
 
 class Skill(CustomBaseModel):
+    """"Модель навыков пользователя (Docker, git, Python и другие)."""
+
     name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=25)
 
 
 class LanguageLevel(CustomBaseModel):
+    """"Модель уровня владения языком (A2, B1, C1, родной и другие)."""
+
     name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=25)
 
 
 class Language(CustomBaseModel):
+    """"Модель языка (Английский, Русский и другие)."""
+
     name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=25)
     level = models.ForeignKey(LanguageLevel, verbose_name='Language level', on_delete=models.PROTECT)
 
 
 class Resume(CustomBaseModel):
+    """"Модель резюме пользователя."""
+
     user = models.ForeignKey(CustomUser, verbose_name='User', on_delete=models.CASCADE)
     # Информация о желаемой позиции
     professional_roles = models.ManyToManyField(ProfessionalRole, verbose_name='Position')
@@ -63,6 +81,8 @@ class Resume(CustomBaseModel):
 
 
 class Experience(CustomBaseModel):
+    """"Модель опыта работы пользователя. Например места прошлых работ, сделанных проектов"""
+
     resume = models.ForeignKey(Resume, verbose_name='Resume', related_name='experiences', on_delete=models.CASCADE)
     name = models.CharField(primary_key=True, verbose_name='Name', max_length=50)
     professional_roles = models.ForeignKey(ProfessionalRole, verbose_name='Position', on_delete=models.PROTECT)
@@ -74,11 +94,15 @@ class Experience(CustomBaseModel):
 # Блок вакансий
 
 class Сurrency(CustomBaseModel):
+    """"Модель денежных валют (рубли, доллары и другие)."""
+
     name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=25)
     short_name = models.CharField(unique=True, verbose_name='Short name', max_length=10)
 
 
 class Vacancy(CustomBaseModel):
+    """"Модель вакансии, созданной работодателем."""
+
     # Информация о вакансии
     vacancy_hh_id = models.PositiveIntegerField(primary_key=True, verbose_name='ID vacancy')
     name = models.CharField(verbose_name='Name', max_length=50)
