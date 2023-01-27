@@ -1,5 +1,6 @@
 from django.contrib import admin
 from userapp.models import *
+from vacancyapp.models import *
 
 
 admin.site.register(Vacancy)

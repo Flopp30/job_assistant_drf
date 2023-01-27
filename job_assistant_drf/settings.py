@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     
     # myapp
     'userapp',
+    'vacancyapp',
 ]
 
 MIDDLEWARE = [
