@@ -24,7 +24,7 @@ class GenTestData:
     )
 
     # шаблон для формирования мужских фио
-    first_names_m = [(
+    first_names_m = (
         "Artem", "Aleksey", "Andrey", "Anton", "Afanasiy", "Alexandr", "Anatoliy",
         "Boris", "Boleslav", "Bogdan", "Vasiliy", "Vaicheslav", "Vsevolod", "Vladimir", "Viktor",
         "Georgiy", "Gennadiy", "Gleb", "German", "Dmitriy", "Denis", "Daniil", "Evgeniy", "Egor", "Jora", "Zenon", "Zakhar",
@@ -33,7 +33,21 @@ class GenTestData:
         "Oleg", "Osip", "Pavel", "Petr", "Potap", "Ruslan", "Robert", "Rail", "Rustam", "Rinat", "Sergey", "Stanislav",
         "Saveliy", "Stepan", "Semen", "Stanislav", "Spiridon", "Timofey", "Taras", "Timur", "Tixon", "Trofim",
         "Fedot", "Fedor", "Filipp", "Foma", "Edvard", "Eduard", "Ernest", "Yuriy", "Yan", "Yaroslav", "Yakov"
-    ), (
+    )
+
+    # шаблон для формирования женских фио
+    first_names_f = (
+        "Alla", "Alina", "Alevtina", "Anna", "Anastasya", "Agata", "Alena", "Broneslava", "Barbara", "Viktorya", "Valentina",
+        "Vasilina", "Vasilisa", "Vera", "Galina", "Gabriella", "Gera", "Gertruda", "Diana", "Darya", "Elena", "Elizaveta",
+        "Ekaterina", "Evgenya", "Jozefina", "Janna", "Zoya", "Zara", "Zarina", "Irina", "Klavdya", "Klementina",
+        "Karina", "Lera", "Laura", "Lana", "Lusia", "Ludmila", "Lara", "Larisa", "Marya", "Marta", "Natalya", "Olga",
+        "Oksana", "Polina", "Paranya", "Pelageya", "Rita", "Raisa", "Ruslana", "Roza", "Rimma", "Svetlana", "Stefanya",
+        "Snejanna", "Tatyana", "Tamara", "Tonya", "Uliana", "Ustina", "Faina", "Fedora", "Hloya", "Evelina", "Ella",
+        "Emma", "Yana", "Yanina", "Yaroslava", "Yadviga"
+    )
+
+    # шаблон для формирования фамилий
+    last_names = (
         "Ivanov", "Smirnov", "Kuznetsov", "Popov", "Vasilev", "Petrov", "Sokolov", "Mikhaylov", "Novikov", "Fedorov",
         "Morozov", "Volkov", "Alekseev", "Lebedev", "Semenov", "Egorov", "Pavlov", "Kozlov", "Stepanov", "Nikolaev",
         "Orlov", "Andreev", "Makarov", "Nikitin", "Zakharov", "Zaytsev", "Solovev", "Borisov", "Yakovlev", "Grigorev",
@@ -46,8 +60,7 @@ class GenTestData:
         "Konovalov", "Lazarev", "Voronin", "Klimov", "Filatov", "Ponomarev", "Golubev", "Kudryavtsev", "Prokhorov",
         "Naumov", "Potapov", "Zhuravlev", "Ovchinnikov", "Trofimov", "Leonov", "Sobolev", "Ermakov", "Kolesnikov",
         "Goncharov", "Emelyanov", "Nikiforov", "Grachev"
-    )]
-    # шаблон для формирования женских фио
+    )
 
     # формирование тестового файла
     def __init__(self, len_passw=5, email_template='test'):
