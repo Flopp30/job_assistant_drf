@@ -12,6 +12,9 @@ class Employment(CustomBaseModel):
         verbose_name = 'Вид занятости'
         verbose_name_plural = 'Виды занятости'
 
+    def __str__(self):
+        return self.name
+
 
 class Schedule(CustomBaseModel):
     """"Модель графика работы (полный день, удаленка, гибкий график и другие)."""
@@ -21,6 +24,9 @@ class Schedule(CustomBaseModel):
         verbose_name = 'График работы'
         verbose_name_plural = 'Графики работы'
 
+    def __str__(self):
+        return self.name
+
 
 class KeySkill(CustomBaseModel):
     """"Модель навыков пользователя (Docker, git, Python и другие)."""
@@ -29,6 +35,9 @@ class KeySkill(CustomBaseModel):
     class Meta:
         verbose_name = 'Ключевые навыки'
         verbose_name_plural = 'Ключевые навыки'
+
+    def __str__(self):
+        return self.name
 
 
 class LanguageLevel(CustomBaseModel):
@@ -40,6 +49,9 @@ class LanguageLevel(CustomBaseModel):
         verbose_name = 'Уровень владения языком'
         verbose_name_plural = 'Уровни владения языком'
 
+    def __str__(self):
+        return self.name
+
 
 class Language(CustomBaseModel):
     """"Модель языка (Английский, Русский и другие)."""
@@ -49,6 +61,9 @@ class Language(CustomBaseModel):
     class Meta:
         verbose_name = 'Язык'
         verbose_name_plural = 'Языки'
+
+    def __str__(self):
+        return self.name
 
 
 class Resume(CustomBaseModel):
@@ -69,6 +84,9 @@ class Resume(CustomBaseModel):
         verbose_name = 'Резюме'
         verbose_name_plural = 'Резюме'
 
+    def __str__(self):
+        return self.user
+
 
 class Experience(CustomBaseModel):
     """"Модель опыта работы пользователя. Например, места прошлых работ, сделанных проектов"""
@@ -85,3 +103,6 @@ class Experience(CustomBaseModel):
     class Meta:
         verbose_name = 'Предыдущее место работы'
         verbose_name_plural = 'Предыдущие места работы'
+
+    def __str__(self):
+        return self.name

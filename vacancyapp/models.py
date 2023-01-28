@@ -13,6 +13,9 @@ class Currency(CustomBaseModel):
         verbose_name = 'Название валюты'
         verbose_name_plural = 'Название валюты'
 
+    def __str__(self):
+        return f'{self.name} ({self.short_name})'
+
 
 class Vacancy(CustomBaseModel):
     """"Модель вакансии, созданной работодателем."""
@@ -51,3 +54,6 @@ class Vacancy(CustomBaseModel):
     class Meta:
         verbose_name = 'Вакансия'
         verbose_name_plural = 'Вакансии'
+
+    def __str__(self):
+        return self.name
