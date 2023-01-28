@@ -1,10 +1,16 @@
-from django.shortcuts import render
-
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin
 from resumeapp.models import Employment, Schedule, KeySkill, LanguageLevel, Language, Resume, Experience
-from resumeapp.serializers import ScheduleModelSerializer, SkillModelSerializer, \
-    LanguageLevelModelSerializer, LanguageModelSerializer, ResumeModelSerializer, ExperienceModelSerializer
+from resumeapp.serializers import (
+    ScheduleModelSerializer, SkillModelSerializer, LanguageLevelModelSerializer,
+    LanguageModelSerializer, ResumeModelSerializer, ExperienceModelSerializer,
+    EmploymentModelSerializer
+)
+
+
+class EmploymentModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
+    queryset = Employment.objects.all()
+    serializer_class = EmploymentModelSerializer
 
 
 class ScheduleModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
