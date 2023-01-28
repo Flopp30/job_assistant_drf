@@ -6,7 +6,7 @@ from resumeapp.models import Schedule, Employment, Skill, Language
 class Currency(CustomBaseModel):
     """"Модель денежных валют (рубли, доллары и другие)."""
 
-    name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=25)  # Полное название валюты
+    name = models.CharField(unique=True, verbose_name='Name', max_length=25)  # Полное название валюты
     short_name = models.CharField(unique=True, verbose_name='Short name', max_length=10)  # Короткое название валюты
 
 
@@ -14,7 +14,7 @@ class Vacancy(CustomBaseModel):
     """"Модель вакансии, созданной работодателем."""
 
     # Информация о вакансии
-    vacancy_hh_id = models.PositiveIntegerField(primary_key=True, verbose_name='ID vacancy')  # ID вакансии
+    vacancy_hh_id = models.PositiveIntegerField(verbose_name='ID vacancy')  # ID вакансии
     name = models.CharField(verbose_name='Name', max_length=50)  # Наименование вакансии
     description = models.TextField(verbose_name='Description', blank=True)  # Описание вакансии
     area_name = models.CharField(verbose_name='Location', max_length=150)  # Месторасположение работы из вакансии
