@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -17,6 +17,8 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 JSON_DIR = BASE_DIR / 'json'
 
+dot_env = BASE_DIR / '.env'
+load_dotenv(dotenv_path=dot_env)
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,8 +27,9 @@ JSON_DIR = BASE_DIR / 'json'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-brq6l=%n)&803%=a=5-ps26uus01qgj8)@-qn-4behmkmd=7ge'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -86,12 +89,21 @@ WSGI_APPLICATION = 'job_assistant_drf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if os.getenv('ENV_TYPE') == 'local':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'lms',
+            'USER': 'postgres',
+        }
+    }
 
 
 # Password validation
