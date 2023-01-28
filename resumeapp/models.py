@@ -22,7 +22,7 @@ class Schedule(CustomBaseModel):
         verbose_name_plural = 'Графики работы'
 
 
-class Skill(CustomBaseModel):
+class KeySkill(CustomBaseModel):
     """"Модель навыков пользователя (Docker, git, Python и другие)."""
     name = models.CharField(unique=True, verbose_name='Название навыка', max_length=25)  # Название навыка
 
@@ -44,8 +44,7 @@ class LanguageLevel(CustomBaseModel):
 class Language(CustomBaseModel):
     """"Модель языка (Английский, Русский и другие)."""
     name = models.CharField(unique=True, verbose_name='Язык', max_length=25)  # Название языка
-    level = models.ForeignKey(LanguageLevel, verbose_name='Уровень владения',
-                              on_delete=models.PROTECT)  # Уровень владения языком
+    level = models.ManyToManyField(LanguageLevel, verbose_name='Уровень владения')  # Уровень владения языком
 
     class Meta:
         verbose_name = 'Язык'
@@ -57,12 +56,12 @@ class Resume(CustomBaseModel):
     user = models.ForeignKey(CustomUser, verbose_name='Пользователь',
                              on_delete=models.CASCADE)  # Пользователь, подавший резюме
     # Информация о желаемой позиции
-    professional_roles = models.CharField(max_length=150, verbose_name='Должность')  # Позиция на работе/проекте
+    professional_role = models.CharField(max_length=150, verbose_name='Должность')  # Позиция на работе/проекте
     employment = models.ManyToManyField(Employment, verbose_name='Вид занятости')  # Вид занятости (стажировка)
     schedule = models.ManyToManyField(Schedule, verbose_name='График работы')  # График работы (полный день, стажировка)
     # Навыки
     languages = models.ManyToManyField(Language, verbose_name='Язык')  # Язык
-    key_skills = models.ManyToManyField(Skill, verbose_name='Клчюевые навыки')  # Навыки
+    key_skills = models.ManyToManyField(KeySkill, verbose_name='Клчюевые навыки')  # Навыки
     # Доп информация
     about = models.TextField(verbose_name='Обо мне')  # Доп информация о человеке
 
@@ -76,7 +75,7 @@ class Experience(CustomBaseModel):
     resume = models.ForeignKey(Resume, verbose_name='Резюме', related_name='experiences',
                                on_delete=models.CASCADE)  # Резюме, к которому привязан опыт
     name = models.CharField(verbose_name='Название предыдущего места работы', max_length=50)  # Название работы/проекта
-    professional_roles = models.CharField(max_length=150, verbose_name='Должность')  # Позиция на работе/проекте
+    professional_role = models.CharField(max_length=150, verbose_name='Должность')  # Позиция на работе/проекте
     description = models.TextField(verbose_name='Описание',
                                    blank=True)  # Описание прошлого опыта (что делал на проекте, чем занимался)
     started_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата начала')  # Дата начала работы

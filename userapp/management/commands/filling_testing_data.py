@@ -1,5 +1,4 @@
 import json
-import os
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
@@ -19,8 +18,19 @@ def fill_users():
     for user in users:
         CustomUser.objects.create_user(**user)
 
-    if os.getenv('ENV_TYPE') == 'local':
-        CustomUser.objects.create_superuser('admin', password='admin', email='admin@django.local')
+
+PROFESSIONAL_ROLES = [
+    'Python backend developer',
+    'JS developer',
+    'C# разработчик',
+    'Аналитик данных',
+    'Java разработчик',
+    'Fullstack python dev',
+]
+
+
+def fill_resume():
+    users = CustomUser.objects.all()
 
 
 class Command(BaseCommand):

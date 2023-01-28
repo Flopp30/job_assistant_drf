@@ -44,7 +44,7 @@ LANGUAGES_LIST = [
     'Португальский',
 ]
 
-CURRENCY_LIST = {
+CURRENCY_DICT = {
     'RUB': 'Рубли',
     'EUR': 'Евро',
     'USD': 'Доллары',
