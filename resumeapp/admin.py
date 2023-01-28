@@ -1,22 +1,9 @@
 from django.contrib import admin
 from resumeapp.models import (
-    ProfessionalRole, Employment, Schedule, Skill,
+    Employment, Schedule, KeySkill,
     Language, LanguageLevel, Resume, Experience
 )
 from userapp.admin import MarkAsDeletedMixin
-
-
-@admin.register(ProfessionalRole)
-class ProfessionalRoleAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
-    list_display = (
-        'name', 'created_at', 'updated_at', 'deleted'
-    )
-    list_filter = ('deleted',)
-    ordering = ('-created_at', 'name',)
-    list_per_page = 50
-    search_fields = ('name',)
-    actions = ('mark_as_delete', 'mark_as_active')
-    list_display_links = ('name',)
 
 
 @admin.register(Employment)
@@ -45,7 +32,7 @@ class ScheduleAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
     list_display_links = ('name',)
 
 
-@admin.register(Skill)
+@admin.register(KeySkill)
 class SkillAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
     list_display = (
         'name', 'created_at', 'updated_at', 'deleted'
@@ -74,7 +61,7 @@ class LanguageLevelAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
 @admin.register(Language)
 class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
     list_display = (
-        'name', 'level', 'created_at', 'updated_at', 'deleted'
+        'name', 'created_at', 'updated_at', 'deleted'
     )
     list_filter = ('deleted',)
     ordering = ('-created_at', 'name',)

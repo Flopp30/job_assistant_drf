@@ -1,6 +1,6 @@
 from django.db import models
 from userapp.models import CustomBaseModel
-from resumeapp.models import Schedule, Employment, Skill, Language
+from resumeapp.models import Schedule, Employment, KeySkill, Language
 
 
 class Currency(CustomBaseModel):
@@ -23,6 +23,7 @@ class Vacancy(CustomBaseModel):
     description = models.TextField(verbose_name='Описание вакансии', blank=True)  # Описание вакансии
     area_name = models.CharField(verbose_name='Месторасположение',
                                  max_length=150)  # Месторасположение работы из вакансии
+    professional_role = models.CharField(max_length=150, verbose_name='Должность')  # Позиция на работе/проекте
     # Деньги
     salary_from = models.PositiveIntegerField(verbose_name='Зарплата от', default=0)  # Зарплата от
     salary_to = models.PositiveIntegerField(verbose_name='Зарплата до', default=0)  # Зарплата до
@@ -38,9 +39,7 @@ class Vacancy(CustomBaseModel):
                                         verbose_name='Вид работы')  # Вид работы (удаленка, стажировка, офис)
     branded_description = models.TextField(verbose_name='Описание в форамте HTML',
                                            blank=True)  # Описание в форамте HTML
-    key_skills = models.ManyToManyField(Skill, verbose_name='Требуемые навыки')  # Требуемые навыки от кандидата
-    professional_roles = models.CharField(verbose_name='Должность',
-                                          max_length=50)  # Должность (начальник, повар)
+    key_skills = models.ManyToManyField(KeySkill, verbose_name='Требуемые навыки')  # Требуемые навыки от кандидата
     languages = models.ManyToManyField(Language, verbose_name='Языки')  # Языки
     # Техническая информация
     response_url = models.CharField(verbose_name='URL отклика', max_length=250, blank=True)  # URL отклика
@@ -48,7 +47,6 @@ class Vacancy(CustomBaseModel):
         verbose_name='Время публикации вакансии (на hh.ru)')  # Время публикации вакансии (на hh.ru)
     created_hh_at = models.DateTimeField(
         verbose_name='Время создания вакансии (на hh.ru)')  # Время создания вакансии (на hh.ru)
-
 
     class Meta:
         verbose_name = 'Вакансия'
