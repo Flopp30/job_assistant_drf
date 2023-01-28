@@ -6,8 +6,7 @@ from userapp.models import CustomBaseModel, CustomUser
 class Employment(CustomBaseModel):
     """"Модель вида занятости (стажировка, частичная занятость, полная занятость и другие)."""
 
-    name = models.CharField(unique=True, verbose_name='Вид занятости',
-                            max_length=50)  # Название вида занятости
+    name = models.CharField(unique=True, verbose_name='Вид занятости', max_length=50)  # Название вида занятости
 
     class Meta:
         verbose_name = 'Вид занятости'
@@ -16,8 +15,7 @@ class Employment(CustomBaseModel):
 
 class Schedule(CustomBaseModel):
     """"Модель графика работы (полный день, удаленка, гибкий график и другие)."""
-    name = models.CharField(unique=True, verbose_name='Тип графика',
-                            max_length=50)  # Название вида графика работы
+    name = models.CharField(unique=True, verbose_name='Тип графика', max_length=50)  # Название вида графика работы
 
     class Meta:
         verbose_name = 'График работы'
@@ -74,7 +72,7 @@ class Resume(CustomBaseModel):
 
 
 class Experience(CustomBaseModel):
-    """"Модель опыта работы пользователя. Например места прошлых работ, сделанных проектов"""
+    """"Модель опыта работы пользователя. Например, места прошлых работ, сделанных проектов"""
     resume = models.ForeignKey(Resume, verbose_name='Резюме', related_name='experiences',
                                on_delete=models.CASCADE)  # Резюме, к которому привязан опыт
     name = models.CharField(verbose_name='Название предыдущего места работы', max_length=50)  # Название работы/проекта

@@ -1,4 +1,6 @@
 import json
+import os
+
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
@@ -17,11 +19,11 @@ def fill_users():
     for user in users:
         CustomUser.objects.create_user(**user)
 
-    CustomUser.objects.create_superuser('admin', password='admin', email='admin@django.local')
+    if os.getenv('ENV_TYPE') == 'local':
+        CustomUser.objects.create_superuser('admin', password='admin', email='admin@django.local')
 
 
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
         fill_users()
-
