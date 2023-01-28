@@ -81,7 +81,7 @@ class Experience(CustomBaseModel):
     started_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата начала')  # Дата начала работы
     finished_at = models.DateTimeField(auto_now=True, verbose_name='Дата окончания',
                                        blank=True)  # Дата окончания работы (либо по текущий момент)
-
+    # TODO поправить автоназначение started_at и finished_at
     class Meta:
         verbose_name = 'Предыдущее место работы'
         verbose_name_plural = 'Предыдущие места работы'
