@@ -1,66 +1,82 @@
 [
   {
-    "username": "DarkSide",
+    "username": "test_u",
     "password": "1111",
-    "first_name": "Daniil",
-    "last_name": "Gusevskii",
+    "first_name": "test_u",
+    "last_name": "test_u",
     "email": "test@django.local",
     "birthday_date": "1993-12-11"
   },
   {
-    "username": "LightSide",
+    "username": "test_u1",
     "password": "1111",
-    "first_name": "Kirill",
-    "last_name": "Shamilev",
+    "first_name": "test_u1",
+    "last_name": "test_u1",
     "email": "test1@django.local",
     "birthday_date": "1995-12-30"
   },
   {
-    "username": "HoMM",
+    "username": "test_u2",
     "password": "1111",
-    "first_name": "Ivan",
-    "last_name": "Abramov",
+    "first_name": "test_u2",
+    "last_name": "test_u2",
     "email": "test2@django.local",
     "birthday_date": "1983-05-20"
   },
   {
-    "username": "VaK",
+    "username": "test_u3",
     "password": "1111",
-    "first_name": "Alexey",
-    "last_name": "Fiksov",
+    "first_name": "test_u3",
+    "last_name": "test_u3",
     "email": "test3@django.local",
     "birthday_date": "1966-03-09"
   },
   {
-    "username": "Bleed",
+    "username": "test_u4",
     "password": "1111",
-    "first_name": "Phill",
-    "last_name": "Ranjin",
+    "first_name": "test_u4",
+    "last_name": "test_u4",
     "email": "test4@django.local",
     "birthday_date": "1993-12-11"
   },
   {
-    "username": "SnakieBird",
+    "username": "test_u5",
     "password": "1111",
-    "first_name": "Karina",
-    "last_name": "Fillipova",
+    "first_name": "test_u5",
+    "last_name": "test_u5",
     "email": "test5@django.local",
     "birthday_date": "1991-05-26"
   },
   {
-    "username": "Dragon",
+    "username": "test_u6",
     "password": "1111",
-    "first_name": "Dmitrii",
-    "last_name": "Prusihin",
+    "first_name": "test_u6",
+    "last_name": "test_u6",
     "email": "test6@django.local",
     "birthday_date": "1981-04-12"
   },
   {
-    "username": "Apostol",
+    "username": "test_u7",
     "password": "1111",
-    "first_name": "Vlad",
-    "last_name": "Ten",
+    "first_name": "test_u7",
+    "last_name": "test_u7",
     "email": "test7@django.local",
+    "birthday_date": "1996-03-09"
+  },
+  {
+    "username": "test_u8",
+    "password": "1111",
+    "first_name": "test_u8",
+    "last_name": "test_u8",
+    "email": "test8@django.local",
+    "birthday_date": "1996-03-09"
+  },
+  {
+    "username": "test_u9",
+    "password": "1111",
+    "first_name": "test_u9",
+    "last_name": "test_u9",
+    "email": "test9@django.local",
     "birthday_date": "1996-03-09"
   }
 ]

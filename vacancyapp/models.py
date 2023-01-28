@@ -39,8 +39,6 @@ class Vacancy(CustomBaseModel):
     branded_description = models.TextField(verbose_name='Описание в форамте HTML',
                                            blank=True)  # Описание в форамте HTML
     key_skills = models.ManyToManyField(Skill, verbose_name='Требуемые навыки')  # Требуемые навыки от кандидата
-    professional_roles = models.CharField(verbose_name='Должность',
-                                          max_length=50)  # Должность (начальник, повар)
     languages = models.ManyToManyField(Language, verbose_name='Языки')  # Языки
     # Техническая информация
     response_url = models.CharField(verbose_name='URL отклика', max_length=250, blank=True)  # URL отклика
@@ -49,6 +47,7 @@ class Vacancy(CustomBaseModel):
     created_hh_at = models.DateTimeField(
         verbose_name='Время создания вакансии (на hh.ru)')  # Время создания вакансии (на hh.ru)
 
+    professional_roles = models.CharField(max_length=150, verbose_name='Должность')  # Позиция на работе/проекте
 
     class Meta:
         verbose_name = 'Вакансия'

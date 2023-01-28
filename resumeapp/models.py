@@ -3,16 +3,6 @@ from django.db import models
 from userapp.models import CustomBaseModel, CustomUser
 
 
-class ProfessionalRole(CustomBaseModel):
-    """" Модель позиции (должности) человека на работе/проекте."""
-
-    name = models.CharField(unique=True, verbose_name='Название должности', max_length=50)  # Название должности
-
-    class Meta:
-        verbose_name = 'Должность'
-        verbose_name_plural = 'Должности'
-
-
 class Employment(CustomBaseModel):
     """"Модель вида занятости (стажировка, частичная занятость, полная занятость и другие)."""
 
@@ -66,10 +56,10 @@ class Language(CustomBaseModel):
 
 class Resume(CustomBaseModel):
     """"Модель резюме пользователя."""
-    user = models.ForeignKey(CustomUser, verbose_name='Пользователь', on_delete=models.CASCADE)  # Пользователь, подавший резюме
+    user = models.ForeignKey(CustomUser, verbose_name='Пользователь',
+                             on_delete=models.CASCADE)  # Пользователь, подавший резюме
     # Информация о желаемой позиции
-    professional_roles = models.ManyToManyField(ProfessionalRole,
-                                                verbose_name='Позиция')  # Желаемая позиция (начальник, повар)
+    professional_roles = models.CharField(max_length=150, verbose_name='Должность')  # Позиция на работе/проекте
     employment = models.ManyToManyField(Employment, verbose_name='Вид занятости')  # Вид занятости (стажировка)
     schedule = models.ManyToManyField(Schedule, verbose_name='График работы')  # График работы (полный день, стажировка)
     # Навыки
@@ -88,8 +78,7 @@ class Experience(CustomBaseModel):
     resume = models.ForeignKey(Resume, verbose_name='Резюме', related_name='experiences',
                                on_delete=models.CASCADE)  # Резюме, к которому привязан опыт
     name = models.CharField(verbose_name='Название предыдущего места работы', max_length=50)  # Название работы/проекта
-    professional_roles = models.ForeignKey(ProfessionalRole, verbose_name='Должность',
-                                           on_delete=models.PROTECT)  # Позиция на работе/проекте
+    professional_roles = models.CharField(max_length=150, verbose_name='Должность')  # Позиция на работе/проекте
     description = models.TextField(verbose_name='Описание',
                                    blank=True)  # Описание прошлого опыта (что делал на проекте, чем занимался)
     started_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата начала')  # Дата начала работы
