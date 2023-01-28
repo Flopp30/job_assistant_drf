@@ -78,7 +78,7 @@ class ResumeAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
         'about', 'created_at', 'deleted'
     )
     list_filter = ('deleted',)
-    ordering = ('professional_roles', 'created_at',)
+    ordering = ('created_at',)
     list_per_page = 50
     search_fields = ('about', 'user')
     actions = ('mark_as_delete', 'mark_as_active')
@@ -88,7 +88,7 @@ class ResumeAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
 @admin.register(Experience)
 class ExperienceAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
     list_display = (
-        'resume', 'name', 'professional_roles',
+        'resume', 'name',
         'description', 'started_at', 'finished_at',
         'created_at', 'deleted'
     )

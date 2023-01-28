@@ -130,3 +130,5 @@ dmypy.json
 
 *.sqlite3
 .idea
+
+*/migrations/*

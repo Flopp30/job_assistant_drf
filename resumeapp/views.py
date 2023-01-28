@@ -2,20 +2,9 @@ from django.shortcuts import render
 
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin
-from resumeapp.models import ProfessionalRole, Employment, Schedule, Skill, LanguageLevel, Language, Resume, Experience
-from resumeapp.serializers import ProfessionalRoleModelSerializer, ScheduleModelSerializer, SkillModelSerializer, \
+from resumeapp.models import Employment, Schedule, KeySkill, LanguageLevel, Language, Resume, Experience
+from resumeapp.serializers import ScheduleModelSerializer, SkillModelSerializer, \
     LanguageLevelModelSerializer, LanguageModelSerializer, ResumeModelSerializer, ExperienceModelSerializer
-
-
-class ProfessionalRoleModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin,
-                                   CreateModelMixin):
-    queryset = ProfessionalRole.objects.all()
-    serializer_class = ProfessionalRoleModelSerializer
-
-
-class EmploymentModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
-    queryset = Employment.objects.all()
-    serializer_class = ProfessionalRoleModelSerializer
 
 
 class ScheduleModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
@@ -24,7 +13,7 @@ class ScheduleModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, U
 
 
 class SkillModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
-    queryset = Skill.objects.all()
+    queryset = KeySkill.objects.all()
     serializer_class = SkillModelSerializer
 
 
