@@ -1,5 +1,6 @@
 from django.db import models
-from userapp.models import CustomBaseModel, Schedule, Employment, Skill, Language
+from userapp.models import CustomBaseModel
+from resumeapp.models import Schedule, Employment, Skill, Language
 
 
 class Currency(CustomBaseModel):

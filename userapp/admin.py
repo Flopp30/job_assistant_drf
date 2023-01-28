@@ -1,18 +1,6 @@
 from django.contrib import admin
-from userapp.models import *
-from vacancyapp.models import *
+from userapp.models import CustomUser
 
-
-admin.site.register(Vacancy)
-admin.site.register(Resume)
-admin.site.register(Skill)
-admin.site.register(Employment)
-admin.site.register(Experience)
-admin.site.register(Language)
-admin.site.register(LanguageLevel)
-admin.site.register(ProfessionalRole)
-admin.site.register(Currency)
-admin.site.register(Schedule)
 
 @admin.register(CustomUser)
 class UserAdmin(admin.ModelAdmin):
