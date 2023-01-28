@@ -11,7 +11,7 @@ admin.site.register(Experience)
 admin.site.register(Language)
 admin.site.register(LanguageLevel)
 admin.site.register(ProfessionalRole)
-admin.site.register(Сurrency)
+admin.site.register(Currency)
 admin.site.register(Schedule)
 
 @admin.register(CustomUser)

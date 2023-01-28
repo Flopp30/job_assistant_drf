@@ -11,13 +11,13 @@ class CustomBaseModel(models.Model):
     # id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created', editable=False)  # Дата создания
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated', editable=False)  # Дата обновления
-    deleted = models.BooleanField(default=False, verbose_name='Deleted')  # Дата удаления
+    is_deleted = models.BooleanField(default=False, verbose_name='Deleted')  # Дата удаления
 
     class Meta:
         abstract = True
 
     def delete(self, *args):
-        self.deleted = True
+        self.is_deleted = True
         self.save()
 
 
@@ -37,15 +37,17 @@ class ProfessionalRole(CustomBaseModel):
 class Employment(CustomBaseModel):
     """"Модель вида занятости (стажировка, частичная занятость, полная занятость и другие)."""
 
-    name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=50)  # Название вида занятости
+    name = models.CharField(primary_key=True, unique=True, verbose_name='Name',
+                            max_length=50)  # Название вида занятости
 
 
 class Schedule(CustomBaseModel):
     """"Модель графика работы (полный день, удаленка, гибкий график и другие)."""
 
-    name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=50)  # Название вида графика работы
+    name = models.CharField(primary_key=True, unique=True, verbose_name='Name',
+                            max_length=50)  # Название вида графика работы
 
-
+# TODO
 class Skill(CustomBaseModel):
     """"Модель навыков пользователя (Docker, git, Python и другие)."""
 
@@ -55,14 +57,16 @@ class Skill(CustomBaseModel):
 class LanguageLevel(CustomBaseModel):
     """"Модель уровня владения языком (A2, B1, C1, родной и другие)."""
 
-    name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=25)  # Название уровня владения языком
+    name = models.CharField(primary_key=True, unique=True, verbose_name='Name',
+                            max_length=25)  # Название уровня владения языком
 
 
 class Language(CustomBaseModel):
     """"Модель языка (Английский, Русский и другие)."""
 
     name = models.CharField(primary_key=True, unique=True, verbose_name='Name', max_length=25)  # Название языка
-    level = models.ForeignKey(LanguageLevel, verbose_name='Language level', on_delete=models.PROTECT)  # Уровень владения языком
+    level = models.ForeignKey(LanguageLevel, verbose_name='Language level',
+                              on_delete=models.PROTECT)  # Уровень владения языком
 
 
 class Resume(CustomBaseModel):
@@ -70,7 +74,8 @@ class Resume(CustomBaseModel):
 
     user = models.ForeignKey(CustomUser, verbose_name='User', on_delete=models.CASCADE)  # Пользователь, подавший резюме
     # Информация о желаемой позиции
-    professional_roles = models.ManyToManyField(ProfessionalRole, verbose_name='Position')  # Желаемая позиция (начальник, повар)
+    professional_roles = models.ManyToManyField(ProfessionalRole,
+                                                verbose_name='Position')  # Желаемая позиция (начальник, повар)
     employment = models.ManyToManyField(Employment, verbose_name='Employment')  # Вид занятости (стажировка)
     schedule = models.ManyToManyField(Schedule, verbose_name='Work schedule')  # График работы (полный день, стажировка)
     # Навыки
@@ -83,14 +88,13 @@ class Resume(CustomBaseModel):
 class Experience(CustomBaseModel):
     """"Модель опыта работы пользователя. Например места прошлых работ, сделанных проектов"""
 
-    resume = models.ForeignKey(Resume, verbose_name='Resume', related_name='experiences', on_delete=models.CASCADE)  # Резюме, к которому привязан опыт
+    resume = models.ForeignKey(Resume, verbose_name='Resume', related_name='experiences',
+                               on_delete=models.CASCADE)  # Резюме, к которому привязан опыт
     name = models.CharField(primary_key=True, verbose_name='Name', max_length=50)  # Название работы/проекта
-    professional_roles = models.ForeignKey(ProfessionalRole, verbose_name='Position', on_delete=models.PROTECT)  # Позиция на работе/проекте
-    description = models.TextField(verbose_name='Description', blank=True)  # Описание прошлого опыта (что делал на проекте, чем занимался)
+    professional_roles = models.ForeignKey(ProfessionalRole, verbose_name='Position',
+                                           on_delete=models.PROTECT)  # Позиция на работе/проекте
+    description = models.TextField(verbose_name='Description',
+                                   blank=True)  # Описание прошлого опыта (что делал на проекте, чем занимался)
     started_at = models.DateTimeField(auto_now_add=True, verbose_name='Started')  # Дата начала работы
-    finished_at = models.DateTimeField(auto_now=True, verbose_name='Finished', blank=True)  # Дата окончания работы (либо по текущий момент)
-
-
-
-
-
+    finished_at = models.DateTimeField(auto_now=True, verbose_name='Finished',
+                                       blank=True)  # Дата окончания работы (либо по текущий момент)
