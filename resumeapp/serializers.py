@@ -1,5 +1,6 @@
 from rest_framework.serializers import ModelSerializer
-from resumeapp.models import Employment, Schedule, KeySkill, LanguageLevel, Language, Resume, Experience
+from resumeapp.models import Employment, Schedule, KeySkill, Resume, Experience
+from userapp.serializers import CustomUserModelSerializer
 
 
 class EmploymentModelSerializer(ModelSerializer):
@@ -14,25 +15,18 @@ class ScheduleModelSerializer(ModelSerializer):
         fields = '__all__'
 
 
-class SkillModelSerializer(ModelSerializer):
+class KeySkillModelSerializer(ModelSerializer):
     class Meta:
         model = KeySkill
         fields = '__all__'
 
 
-class LanguageLevelModelSerializer(ModelSerializer):
-    class Meta:
-        model = LanguageLevel
-        fields = '__all__'
-
-
-class LanguageModelSerializer(ModelSerializer):
-    class Meta:
-        model = Language
-        fields = '__all__'
-
 
 class ResumeModelSerializer(ModelSerializer):
+    schedule = ScheduleModelSerializer(many=True)
+    employment = EmploymentModelSerializer(many=True)
+    user = CustomUserModelSerializer()
+    key_skills = KeySkillModelSerializer(many=True)
     class Meta:
         model = Resume
         fields = '__all__'

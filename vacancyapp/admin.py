@@ -1,6 +1,6 @@
 from django.contrib import admin
 from userapp.admin import MarkAsDeletedMixin
-from vacancyapp.models import Currency, Vacancy
+from vacancyapp.models import Currency, Vacancy, VacancyLanguageLevel
 
 
 @admin.register(Currency)
@@ -27,3 +27,10 @@ class UserAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
     search_fields = ('name', 'area_name',)
     actions = ('mark_as_delete', 'mark_as_active',)
     list_display_links = ('name', 'published_hh_at')
+
+
+@admin.register(VacancyLanguageLevel)
+class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    list_display = (
+        'vacancy', 'language', 'level'
+    )

@@ -1,6 +1,6 @@
 from django.db import models
-from userapp.models import CustomBaseModel
-from resumeapp.models import Schedule, Employment, KeySkill, Language
+from userapp.models import CustomBaseModel, Language, LanguageLevel
+from resumeapp.models import Schedule, Employment, KeySkill
 
 
 class Currency(CustomBaseModel):
@@ -57,3 +57,14 @@ class Vacancy(CustomBaseModel):
 
     def __str__(self):
         return self.name
+
+
+class VacancyLanguageLevel(CustomBaseModel):
+    """"Модель уровня языка пользователя (Английский, Русский и другие)."""
+    vacancy = models.ForeignKey(Vacancy, verbose_name='Вакансия', on_delete=models.CASCADE, related_name='vacancyLanguageLevels')  # Пользователь, подавший резюме
+    language = models.ForeignKey(Language, verbose_name='Название языка', on_delete=models.CASCADE, related_name='vacancyLanguages')  # Уровень владения языком
+    level = models.ForeignKey(LanguageLevel, verbose_name='Уровень владения',  on_delete=models.CASCADE, related_name='vacancyLevels')  # Уровень владения языком
+
+    class Meta:
+        verbose_name = 'Язык вакансии'
+        verbose_name_plural = 'Языки вакансии'

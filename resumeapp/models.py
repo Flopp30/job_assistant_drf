@@ -40,42 +40,15 @@ class KeySkill(CustomBaseModel):
         return self.name
 
 
-class LanguageLevel(CustomBaseModel):
-    """"Модель уровня владения языком (A2, B1, C1, родной и другие)."""
-    name = models.CharField(unique=True, verbose_name='Уровень владения',
-                            max_length=25)  # Название уровня владения языком
-
-    class Meta:
-        verbose_name = 'Уровень владения языком'
-        verbose_name_plural = 'Уровни владения языком'
-
-    def __str__(self):
-        return self.name
-
-
-class Language(CustomBaseModel):
-    """"Модель языка (Английский, Русский и другие)."""
-    name = models.CharField(unique=True, verbose_name='Язык', max_length=25)  # Название языка
-    level = models.ManyToManyField(LanguageLevel, verbose_name='Уровень владения')  # Уровень владения языком
-
-    class Meta:
-        verbose_name = 'Язык'
-        verbose_name_plural = 'Языки'
-
-    def __str__(self):
-        return self.name
-
-
 class Resume(CustomBaseModel):
     """"Модель резюме пользователя."""
     user = models.ForeignKey(CustomUser, verbose_name='Пользователь',
-                             on_delete=models.CASCADE)  # Пользователь, подавший резюме
+                             on_delete=models.CASCADE,
+                             related_name='resumes')  # Пользователь, подавший резюме
     # Информация о желаемой позиции
     professional_role = models.CharField(max_length=150, verbose_name='Должность')  # Позиция на работе/проекте
     employment = models.ManyToManyField(Employment, verbose_name='Вид занятости')  # Вид занятости (стажировка)
     schedule = models.ManyToManyField(Schedule, verbose_name='График работы')  # График работы (полный день, стажировка)
-    # Навыки
-    languages = models.ManyToManyField(Language, verbose_name='Язык')  # Язык
     key_skills = models.ManyToManyField(KeySkill, verbose_name='Клчюевые навыки')  # Навыки
     # Доп информация
     about = models.TextField(verbose_name='Обо мне')  # Доп информация о человеке
@@ -85,7 +58,7 @@ class Resume(CustomBaseModel):
         verbose_name_plural = 'Резюме'
 
     def __str__(self):
-        return self.user
+        return self.user.email
 
 
 class Experience(CustomBaseModel):
