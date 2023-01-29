@@ -96,7 +96,7 @@ class Generator:  # Too few public methods. 1/2
         if restart or len(self.dict_names) == 0:
             self._dict_gen()
 
-        for i in range(0, count_person):
+        for i in range(0, count_person):  # Unused variable 'i'. Use _ instead.
             data = TestData()
             user_name = self._get_username()
             data.first_name, data.last_name = self._get_name()
