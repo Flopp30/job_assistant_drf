@@ -25,3 +25,5 @@ class LanguageModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, U
     """Class docstring?"""
     queryset = Language.objects.all()
     serializer_class = LanguageModelSerializer
+
+# Classes have too many ancestors 9/7. Refactor maybe?
