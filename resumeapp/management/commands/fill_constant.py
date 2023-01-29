@@ -25,6 +25,7 @@ def fill_constant():
     '''
 
     Employment.objects.all().delete()
+    """Variable name "el" doesn't conform to snake_case naming style."""
     for el in EMPLOYMENT_LIST:
         Employment.objects.create(name=el)
 
