@@ -1,3 +1,4 @@
+"""Module docstrings?"""
 from django.apps import AppConfig
 
 
