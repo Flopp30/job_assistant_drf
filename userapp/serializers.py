@@ -6,7 +6,7 @@ from resumeapp.models import LanguageLevel, Language
 
 class CustomUserModelSerializer(ModelSerializer):
     """Class docstring?"""
-    class Meta:
+    class Meta:  # Too few public methods.
         """Class docstring?"""
         model = CustomUser
         # fields = '__all__'
