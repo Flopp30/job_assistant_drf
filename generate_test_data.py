@@ -7,7 +7,7 @@ from datetime import timedelta, datetime
 
 
 # Класс тестовых данных, сериализуется в json
-class TestData:
+class TestData:  # Too few public methods. 0/2
     username = ""
     password = ""
     first_name = ""
@@ -17,7 +17,7 @@ class TestData:
 
 
 # класс генерации файла с тестовыми данными
-class Generator:
+class Generator:  # Too few public methods. 1/2
     # шаблон для формирования username
     user_names = (
         "Dvin", "Stark", "Bull", "Puma", "Askon", "Truck", "Bomb", "Bato", "Lars", "Sky", "Bart", "Brin",
