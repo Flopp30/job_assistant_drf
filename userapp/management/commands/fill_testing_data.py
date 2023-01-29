@@ -45,7 +45,7 @@ def fill_resume():
         resume = Resume.objects.create(user=user, professional_role=prof_role, about=about_me)
         """Variable name "n" doesn't conform to snake_case naming style."""
         n = randint(1, 4)
-        for i in range(n):
+        for i in range(n):  # Unused variable i. Use _ instead.
             language = choice(languages)
             language_level = choice(language_levels)
             ResumeLanguageLevel.objects.create(resume=resume, language=language, level=language_level)
