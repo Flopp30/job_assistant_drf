@@ -112,7 +112,7 @@ class Generator:  # Too few public methods. 1/2
                 json.dump(data_list, json_file, default=lambda x: x.__dict__, sort_keys=True, indent=2)
                 """Line 109 too long.
                 https://peps.python.org/pep-0008/#maximum-line-length"""
-        except:
+        except:  # No exception type specified.
             print("Write json-file error!")
 
     # генерация username
