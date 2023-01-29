@@ -126,6 +126,7 @@ class Generator:  # Too few public methods. 1/2
     # генерация пароля
     def _get_password(self):
         return ''.join(rnd.choice(ascii_letters) for i in range(self.len_passw))
+    """Instance of 'Generator' has no 'len_passw' member. Maybe 'len_passwd'? Line 128: range(self.len_passw))"""
 
     # генерация имени, возвращает first_name, last_name
     def _get_name(self):
