@@ -21,12 +21,12 @@ class KeySkillModelSerializer(ModelSerializer):
         fields = '__all__'
 
 
-
 class ResumeModelSerializer(ModelSerializer):
     schedule = ScheduleModelSerializer(many=True)
     employment = EmploymentModelSerializer(many=True)
     user = CustomUserModelSerializer()
     key_skills = KeySkillModelSerializer(many=True)
+
     class Meta:
         model = Resume
         fields = '__all__'
