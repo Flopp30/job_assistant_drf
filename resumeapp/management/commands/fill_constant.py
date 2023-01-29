@@ -1,3 +1,4 @@
+"""Module docstring?"""
 from django.core.management.base import BaseCommand
 
 from constant import (
