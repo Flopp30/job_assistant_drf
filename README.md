@@ -18,7 +18,13 @@ Api для внутреннего пользования. Пользовател
 5) Загрузите зависимости ```pip3 install -r requirements.txt```
 6) Создайте файл в корне проекте ```.env``` и перенесите в него переменные из файла ```.env.sample``` (за тем, что ставить на место значений - в тг)
 7) Выполните миграции в базу данных ```python3 manage.py migrate```
-8) Запустите DRF приложение ```python3 manage.py runserver``` (по умолчанию запускается 127.0.0.1:8000)
+8) *Для тестов: заполнить базу данными 
+   ```
+   python3 manage.py create_superuser
+   python3 manage.py fill_constant
+   python3 manage.py fill_testing_data
+   ```
+9) Запустите DRF приложение ```python3 manage.py runserver``` (по умолчанию запускается 127.0.0.1:8000)
 
 
 ***Будет дополняться в процессе***
@@ -31,7 +37,13 @@ Api для внутреннего пользования. Пользовател
 5) Загрузите зависимости ```pip install -r requirements.txt```
 6) Создайте файл в корне проекте ```.env``` и перенесите в него переменные из файла ```.env.sample``` (за тем, что ставить на место значений - в тг)
 7) Выполните миграции в базу данных ```python manage.py migrate```
-8) Запустите DRF приложение ```python manage.py runserver``` (по умолчанию запускается 127.0.0.1:8000)
+8) *Для тестов: заполнить базу данными 
+   ```
+   python3 manage.py create_superuser
+   python3 manage.py fill_constant
+   python3 manage.py fill_testing_data
+   ```
+9) Запустите DRF приложение ```python manage.py runserver``` (по умолчанию запускается 127.0.0.1:8000)
 
 ***Будет дополняться в процессе***
 

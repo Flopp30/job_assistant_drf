@@ -28,7 +28,6 @@ def fill_resume():
     employments = Employment.objects.all()
     schedules = Schedule.objects.all()
     languages = Language.objects.all()
-
     language_levels = LanguageLevel.objects.all()
     key_skills = KeySkill.objects.all()
 
