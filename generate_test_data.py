@@ -8,6 +8,7 @@ from datetime import timedelta, datetime
 
 # Класс тестовых данных, сериализуется в json
 class TestData:  # Too few public methods. 0/2
+    """Class docstring?"""
     username = ""
     password = ""
     first_name = ""
@@ -18,6 +19,7 @@ class TestData:  # Too few public methods. 0/2
 
 # класс генерации файла с тестовыми данными
 class Generator:  # Too few public methods. 1/2
+    """Class docstring?"""
     # шаблон для формирования username
     user_names = (
         "Dvin", "Stark", "Bull", "Puma", "Askon", "Truck", "Bomb", "Bato", "Lars", "Sky", "Bart", "Brin",
