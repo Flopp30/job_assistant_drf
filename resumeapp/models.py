@@ -1,3 +1,4 @@
+"""Module docstrings?"""
 from django.db import models
 
 from userapp.models import CustomBaseModel, CustomUser
