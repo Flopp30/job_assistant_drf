@@ -1,3 +1,4 @@
+"""Module docstring?"""
 from django.contrib import admin
 
 from userapp.models import CustomUser
