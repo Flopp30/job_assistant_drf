@@ -34,7 +34,7 @@ def fill_resume():
     languages = Language.objects.all()
     language_levels = LanguageLevel.objects.all()
     key_skills = KeySkill.objects.all()
-
+    """Too many local variables. Refactor?"""
     Resume.objects.all().delete()
     for about_me, prof_role in zip(ABOUT_ME, PROFESSIONAL_ROLES):
         user = choice(users)
