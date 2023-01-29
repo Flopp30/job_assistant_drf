@@ -19,7 +19,7 @@ class CustomBaseModel(models.Model):
         """Class docstring?"""
         abstract = True
 
-    def delete(self, *args):
+    def delete(self, *args):  # Argument args unused.
         self.deleted = True
         self.save()
 
