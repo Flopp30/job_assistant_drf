@@ -51,6 +51,6 @@ def fill_constant():
 
 
 class Command(BaseCommand):
-
+    """Class docstring?"""
     def handle(self, *args, **options):
         fill_constant()
