@@ -87,6 +87,7 @@ class Generator:
     # count_person - кол-во генерируемых записей (по умолчанию 500)
     # restart - сбросить счетчик аккаунтов для предыдущей генерации
     def generate_json(self, file_name, count_person, restart):
+        """Method docstring?"""
         data_list = []
 
         # сформировать словарь генерации, если указано или словарь пуст
@@ -141,6 +142,7 @@ class Generator:
 
 
 def main():
+    """Function docstring?"""
     generator = Generator(8)
     generator.generate_json("json/users.json", 100, True)
 
