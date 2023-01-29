@@ -6,13 +6,13 @@ from userapp.models import CustomUser
 
 class MarkAsDeletedMixin:
     """Class docstring?"""
-    def mark_as_delete(self, request, queryset):
+    def mark_as_delete(self, request, queryset):  # Unused argument 'request'.
         """Method docstring?"""
         queryset.update(deleted=True)
 
     mark_as_delete.short_description = 'Пометить удаленным'
 
-    def mark_as_active(self, request, queryset):
+    def mark_as_active(self, request, queryset):  # Unused argument 'request'.
         """Method docstring?"""
         queryset.update(deleted=False)
 
@@ -33,13 +33,13 @@ class UserAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
     actions = ('mark_as_delete', 'mark_as_active', 'mark_as_superuser', 'mark_as_user')
     list_display_links = ('email', 'username')
 
-    def mark_as_superuser(self, request, queryset):
+    def mark_as_superuser(self, request, queryset):  # Unused argument 'request'.
         """Method docstring?"""
         queryset.update(is_superuser=True)
 
     mark_as_superuser.short_description = 'Сделать суперпользователем'
 
-    def mark_as_user(self, request, queryset):
+    def mark_as_user(self, request, queryset):  # Unused argument 'request'.
         """Method docstring?"""
         queryset.update(is_superuser=False)
 
