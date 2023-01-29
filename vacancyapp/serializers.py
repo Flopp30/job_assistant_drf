@@ -1,5 +1,7 @@
 from rest_framework.serializers import ModelSerializer
+
 from vacancyapp.models import Currency, Vacancy
+
 
 class CurrencyModelSerializer(ModelSerializer):
     class Meta:

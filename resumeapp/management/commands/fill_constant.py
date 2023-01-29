@@ -1,17 +1,13 @@
-import os
-
-from django.conf import settings
 from django.core.management.base import BaseCommand
+
 from constant import (
     EMPLOYMENT_LIST, SCHEDULE_LIST,
     SKILL_LIST, LANGUAGE_LEVEL_LIST,
     LANGUAGES_LIST, CURRENCY_DICT
 )
-
 from resumeapp.models import (
     Employment, Schedule, KeySkill,
     LanguageLevel, Language,
-    Resume, Experience
 )
 from vacancyapp.models import Currency
 
@@ -46,12 +42,6 @@ def fill_constant():
     LanguageLevel.objects.all().delete()
     for lang_level in LANGUAGE_LEVEL_LIST:
         LanguageLevel.objects.create(name=lang_level)
-
-    languages = Language.objects.all()
-    lang_levels = LanguageLevel.objects.all()
-    for language in languages:
-        for lang_level in lang_levels:
-            language.level.add(lang_level)
 
     Currency.objects.all().delete()
     for key, value in CURRENCY_DICT.items():

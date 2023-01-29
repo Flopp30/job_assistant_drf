@@ -1,5 +1,6 @@
-from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin
+from rest_framework.viewsets import GenericViewSet
+
 from vacancyapp.models import Currency, Vacancy
 from vacancyapp.serializers import CurrencyModelSerializer, VacancyModelSerializer
 

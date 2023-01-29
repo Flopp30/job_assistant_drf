@@ -1,6 +1,6 @@
 from django.db import models
 from userapp.models import CustomBaseModel
-from resumeapp.models import Schedule, Employment, KeySkill, Language
+from resumeapp.models import Schedule, Employment, KeySkill, Language, LanguageLevel
 
 
 class Currency(CustomBaseModel):
@@ -12,6 +12,9 @@ class Currency(CustomBaseModel):
     class Meta:
         verbose_name = 'Название валюты'
         verbose_name_plural = 'Название валюты'
+
+    def __str__(self):
+        return f'{self.name} ({self.short_name})'
 
 
 class Vacancy(CustomBaseModel):
@@ -40,7 +43,7 @@ class Vacancy(CustomBaseModel):
     branded_description = models.TextField(verbose_name='Описание в форамте HTML',
                                            blank=True)  # Описание в форамте HTML
     key_skills = models.ManyToManyField(KeySkill, verbose_name='Требуемые навыки')  # Требуемые навыки от кандидата
-    languages = models.ManyToManyField(Language, verbose_name='Языки')  # Языки
+
     # Техническая информация
     response_url = models.CharField(verbose_name='URL отклика', max_length=250, blank=True)  # URL отклика
     published_hh_at = models.DateTimeField(
@@ -51,3 +54,20 @@ class Vacancy(CustomBaseModel):
     class Meta:
         verbose_name = 'Вакансия'
         verbose_name_plural = 'Вакансии'
+
+    def __str__(self):
+        return self.name
+
+
+class VacancyLanguageLevel(CustomBaseModel):
+    """"Модель уровня языка пользователя (Английский, Русский и другие)."""
+    vacancy = models.ForeignKey(Vacancy, verbose_name='Вакансия', on_delete=models.CASCADE,
+                                related_name='vacancyLanguageLevels')  # Пользователь, подавший резюме
+    language = models.ForeignKey(Language, verbose_name='Название языка', on_delete=models.CASCADE,
+                                 related_name='vacancyLanguages')  # Уровень владения языком
+    level = models.ForeignKey(LanguageLevel, verbose_name='Уровень владения', on_delete=models.CASCADE,
+                              related_name='vacancyLevels')  # Уровень владения языком
+
+    class Meta:
+        verbose_name = 'Язык вакансии'
+        verbose_name_plural = 'Языки вакансии'

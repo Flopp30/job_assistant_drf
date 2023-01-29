@@ -1,12 +1,13 @@
 import json
-from random import choice
+from random import choice, randint
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from resumeapp.models import Employment, Schedule, Language, KeySkill, Resume, Experience
-from userapp.models import CustomUser
 from constant import ABOUT_ME, PROFESSIONAL_ROLES, DESCRIPTIONS
+from resumeapp.models import Employment, Schedule, Language, KeySkill, Resume, LanguageLevel, ResumeLanguageLevel, \
+    Experience
+from userapp.models import CustomUser
 
 
 def load_from_json(file_name):
@@ -27,19 +28,25 @@ def fill_resume():
     employments = Employment.objects.all()
     schedules = Schedule.objects.all()
     languages = Language.objects.all()
+
+    language_levels = LanguageLevel.objects.all()
     key_skills = KeySkill.objects.all()
 
     Resume.objects.all().delete()
     for about_me, prof_role in zip(ABOUT_ME, PROFESSIONAL_ROLES):
         user = choice(users)
         employment = choice(employments)
-        schedule = choice(schedules)
-        language = choice(languages)
         key_skill = choice(key_skills)
+        schedule = choice(schedules)
+
         resume = Resume.objects.create(user=user, professional_role=prof_role, about=about_me)
+        n = randint(1, 4)
+        for i in range(n):
+            language = choice(languages)
+            language_level = choice(language_levels)
+            ResumeLanguageLevel.objects.create(resume=resume, language=language, level=language_level)
         resume.employment.add(employment)
         resume.schedule.add(schedule)
-        resume.languages.add(language)
         resume.key_skills.add(key_skill)
 
 
