@@ -108,7 +108,7 @@ class Generator:  # Too few public methods. 1/2
             data_list.append(data)
 
         try:
-            with open(file_name, "w") as json_file:
+            with open(file_name, "w") as json_file:  # Using open() without encoding.
                 json.dump(data_list, json_file, default=lambda x: x.__dict__, sort_keys=True, indent=2)
                 """Line 109 too long.
                 https://peps.python.org/pep-0008/#maximum-line-length"""
