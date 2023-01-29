@@ -43,6 +43,7 @@ def fill_resume():
         schedule = choice(schedules)
 
         resume = Resume.objects.create(user=user, professional_role=prof_role, about=about_me)
+        """Variable name "n" doesn't conform to snake_case naming style."""
         n = randint(1, 4)
         for i in range(n):
             language = choice(languages)
