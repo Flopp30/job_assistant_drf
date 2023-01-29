@@ -13,6 +13,7 @@ from userapp.models import CustomUser
 
 
 def load_from_json(file_name):
+    """Function docstring?"""
     with open(f'{settings.JSON_DIR}/{file_name}.json', 'r') as json_file:
         return json.load(json_file)
 
@@ -26,6 +27,7 @@ def fill_users():
 
 
 def fill_resume():
+    """Function docstring?"""
     users = CustomUser.objects.all()
     employments = Employment.objects.all()
     schedules = Schedule.objects.all()
@@ -53,6 +55,7 @@ def fill_resume():
 
 
 def fill_experience():
+    """Function docstring?"""
     resumes = Resume.objects.all()
     previous_jobs_name = ['ЦИАН', 'EPAM', 'Google', 'Yandex', 'Mail', 'Rambler']
     professional_role = PROFESSIONAL_ROLES
