@@ -11,6 +11,7 @@ class CustomBaseModel(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создана: ', editable=False)  # Дата создания
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Обновлено', editable=False)  # Дата обновления
+    """Line 12, 13 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     deleted = models.BooleanField(default=False, verbose_name='Удален?')  # Дата удаления
 
     class Meta:
