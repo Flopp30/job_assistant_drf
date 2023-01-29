@@ -8,7 +8,7 @@ from userapp.serializers import CustomUserModelSerializer
 
 class EmploymentModelSerializer(ModelSerializer):
     """Class docstring?"""
-    class Meta:
+    class Meta:  # Too few public methods. Refactor?
         """Class docstring?"""
         model = Employment
         fields = '__all__'
