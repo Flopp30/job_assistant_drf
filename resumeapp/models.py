@@ -9,7 +9,7 @@ class Employment(CustomBaseModel):
     """Line 10 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     name = models.CharField(unique=True, verbose_name='Вид занятости', max_length=50)  # Название вида занятости
 
-    class Meta:
+    class Meta:  # Too few public methods. Refactor?
         """Class docstring?"""
         verbose_name = 'Вид занятости'
         verbose_name_plural = 'Виды занятости'
