@@ -108,7 +108,7 @@ class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
 
 
 @admin.register(ResumeLanguageLevel)
-class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):  # Class already defined at line 97.
     """Class docstring?"""
     list_display = (
         'resume', 'language', 'level'
