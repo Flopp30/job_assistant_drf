@@ -1,3 +1,4 @@
+"""Module docstring?"""
 from django.contrib import admin
 from resumeapp.models import (
     Employment, Schedule, KeySkill, Resume, Experience, ResumeLanguageLevel, Language, LanguageLevel
