@@ -10,7 +10,7 @@ class CustomUserModelSerializer(ModelSerializer):
         """Class docstring?"""
         model = CustomUser
         # fields = '__all__'
-        exclude = 'id',
+        exclude = 'id',  # Trailing comma tuple.
 
 
 class LanguageLevelModelSerializer(ModelSerializer):
