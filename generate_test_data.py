@@ -136,7 +136,7 @@ class GenTestData:
 
 
 def main():
-    generator = GenTestData()
+    generator = GenTestData(8)
     generator.generate_json("json/testdata.json", 100, True)
 
 
