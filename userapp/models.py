@@ -16,6 +16,7 @@ class CustomBaseModel(models.Model):
     deleted = models.BooleanField(default=False, verbose_name='Удален?')  # Дата удаления
 
     class Meta:
+        """Class docstring?"""
         abstract = True
 
     def delete(self, *args):
@@ -30,6 +31,7 @@ class CustomUser(AbstractUser, CustomBaseModel):
     birthday_date = models.DateField(**NULLABLE, verbose_name='Дата рождения')  # Дата рождения
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
 
