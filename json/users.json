@@ -1,82 +1,802 @@
 [
   {
-    "username": "test_u",
-    "password": "1111",
-    "first_name": "test_u",
-    "last_name": "test_u",
-    "email": "test@django.local",
-    "birthday_date": "1993-12-11"
+    "birthday_date": "1990-05-31",
+    "email": "Rust1@mail.ru",
+    "first_name": "Alevtina",
+    "last_name": "Baranova",
+    "password": "DynqyKzq",
+    "username": "Rust1"
   },
   {
-    "username": "test_u1",
-    "password": "1111",
-    "first_name": "test_u1",
-    "last_name": "test_u1",
-    "email": "test1@django.local",
-    "birthday_date": "1995-12-30"
+    "birthday_date": "1999-07-22",
+    "email": "Sky1@mail.ru",
+    "first_name": "Olga",
+    "last_name": "Fedorova",
+    "password": "zZddPpph",
+    "username": "Sky1"
   },
   {
-    "username": "test_u2",
-    "password": "1111",
-    "first_name": "test_u2",
-    "last_name": "test_u2",
-    "email": "test2@django.local",
-    "birthday_date": "1983-05-20"
+    "birthday_date": "1971-09-23",
+    "email": "Spaceman1@mail.ru",
+    "first_name": "Snejanna",
+    "last_name": "Ovchinnikova",
+    "password": "pNbVaKrx",
+    "username": "Spaceman1"
   },
   {
-    "username": "test_u3",
-    "password": "1111",
-    "first_name": "test_u3",
-    "last_name": "test_u3",
-    "email": "test3@django.local",
-    "birthday_date": "1966-03-09"
+    "birthday_date": "1965-11-21",
+    "email": "Bull1@mail.ru",
+    "first_name": "Rita",
+    "last_name": "Kazakova",
+    "password": "ZBGKhIxE",
+    "username": "Bull1"
   },
   {
-    "username": "test_u4",
-    "password": "1111",
-    "first_name": "test_u4",
-    "last_name": "test_u4",
-    "email": "test4@django.local",
-    "birthday_date": "1993-12-11"
+    "birthday_date": "1980-08-23",
+    "email": "Zak1@mail.ru",
+    "first_name": "Hloya",
+    "last_name": "Saveleva",
+    "password": "HBHNFZUX",
+    "username": "Zak1"
   },
   {
-    "username": "test_u5",
-    "password": "1111",
-    "first_name": "test_u5",
-    "last_name": "test_u5",
-    "email": "test5@django.local",
-    "birthday_date": "1991-05-26"
+    "birthday_date": "1983-12-21",
+    "email": "Dumb1@mail.ru",
+    "first_name": "Stanislav",
+    "last_name": "Chernyshev",
+    "password": "NKouoKLl",
+    "username": "Dumb1"
   },
   {
-    "username": "test_u6",
-    "password": "1111",
-    "first_name": "test_u6",
-    "last_name": "test_u6",
-    "email": "test6@django.local",
-    "birthday_date": "1981-04-12"
+    "birthday_date": "1967-05-03",
+    "email": "Askon1@mail.ru",
+    "first_name": "Alevtina",
+    "last_name": "Vlasova",
+    "password": "XONPeEJA",
+    "username": "Askon1"
   },
   {
-    "username": "test_u7",
-    "password": "1111",
-    "first_name": "test_u7",
-    "last_name": "test_u7",
-    "email": "test7@django.local",
-    "birthday_date": "1996-03-09"
+    "birthday_date": "1991-03-18",
+    "email": "Truck1@mail.ru",
+    "first_name": "Filipp",
+    "last_name": "Zhuravlev",
+    "password": "lbbJnpCx",
+    "username": "Truck1"
   },
   {
-    "username": "test_u8",
-    "password": "1111",
-    "first_name": "test_u8",
-    "last_name": "test_u8",
-    "email": "test8@django.local",
-    "birthday_date": "1996-03-09"
+    "birthday_date": "1988-09-24",
+    "email": "Spike1@mail.ru",
+    "first_name": "Boris",
+    "last_name": "Frolov",
+    "password": "DzQahBeN",
+    "username": "Spike1"
   },
   {
-    "username": "test_u9",
-    "password": "1111",
-    "first_name": "test_u9",
-    "last_name": "test_u9",
-    "email": "test9@django.local",
-    "birthday_date": "1996-03-09"
+    "birthday_date": "1987-05-10",
+    "email": "Cypro1@mail.ru",
+    "first_name": "Fedor",
+    "last_name": "Nikolaev",
+    "password": "WBvVyvSb",
+    "username": "Cypro1"
+  },
+  {
+    "birthday_date": "1999-06-15",
+    "email": "Tesak1@mail.ru",
+    "first_name": "Gabriella",
+    "last_name": "Nikitina",
+    "password": "ohhboOaJ",
+    "username": "Tesak1"
+  },
+  {
+    "birthday_date": "1997-08-13",
+    "email": "Zak2@mail.ru",
+    "first_name": "Faina",
+    "last_name": "Zhuravleva",
+    "password": "wqKOXqSu",
+    "username": "Zak2"
+  },
+  {
+    "birthday_date": "1992-08-13",
+    "email": "Cypro2@mail.ru",
+    "first_name": "Snejanna",
+    "last_name": "Trofimova",
+    "password": "ENgDAggO",
+    "username": "Cypro2"
+  },
+  {
+    "birthday_date": "1993-08-11",
+    "email": "Riko1@mail.ru",
+    "first_name": "Snejanna",
+    "last_name": "Novikova",
+    "password": "SlBklIFL",
+    "username": "Riko1"
+  },
+  {
+    "birthday_date": "1986-12-26",
+    "email": "Looter1@mail.ru",
+    "first_name": "Tamara",
+    "last_name": "Fomina",
+    "password": "dSBygBbl",
+    "username": "Looter1"
+  },
+  {
+    "birthday_date": "1987-12-23",
+    "email": "Gor1@mail.ru",
+    "first_name": "Yan",
+    "last_name": "Gusev",
+    "password": "spDdLZDt",
+    "username": "Gor1"
+  },
+  {
+    "birthday_date": "1980-06-28",
+    "email": "Fara1@mail.ru",
+    "first_name": "Makar",
+    "last_name": "Fomin",
+    "password": "NDEdFYhb",
+    "username": "Fara1"
+  },
+  {
+    "birthday_date": "1996-06-22",
+    "email": "Bomb1@mail.ru",
+    "first_name": "Hloya",
+    "last_name": "Efimova",
+    "password": "lsejWgni",
+    "username": "Bomb1"
+  },
+  {
+    "birthday_date": "2001-06-15",
+    "email": "BobrDobr1@mail.ru",
+    "first_name": "Anatoliy",
+    "last_name": "Grachev",
+    "password": "DUPIQAFL",
+    "username": "BobrDobr1"
+  },
+  {
+    "birthday_date": "1985-01-09",
+    "email": "Askon2@mail.ru",
+    "first_name": "Ernest",
+    "last_name": "Yakovlev",
+    "password": "qZcMdvot",
+    "username": "Askon2"
+  },
+  {
+    "birthday_date": "1972-05-02",
+    "email": "Urgen1@mail.ru",
+    "first_name": "Ignat",
+    "last_name": "Kolesnikov",
+    "password": "SVMOHtLo",
+    "username": "Urgen1"
+  },
+  {
+    "birthday_date": "1989-01-14",
+    "email": "Parnat1@mail.ru",
+    "first_name": "Agata",
+    "last_name": "Bogdanova",
+    "password": "xWMiruIr",
+    "username": "Parnat1"
+  },
+  {
+    "birthday_date": "1993-09-17",
+    "email": "Freeze1@mail.ru",
+    "first_name": "Yana",
+    "last_name": "Aleksandrova",
+    "password": "GILLFuSC",
+    "username": "Freeze1"
+  },
+  {
+    "birthday_date": "1990-07-01",
+    "email": "Zak3@mail.ru",
+    "first_name": "Marat",
+    "last_name": "Zakharov",
+    "password": "arjUpyIG",
+    "username": "Zak3"
+  },
+  {
+    "birthday_date": "2002-09-08",
+    "email": "Nutic1@mail.ru",
+    "first_name": "Tatyana",
+    "last_name": "Popova",
+    "password": "pkmuvZHJ",
+    "username": "Nutic1"
+  },
+  {
+    "birthday_date": "1988-03-16",
+    "email": "Riko2@mail.ru",
+    "first_name": "Roza",
+    "last_name": "Voronina",
+    "password": "HaaWvZJo",
+    "username": "Riko2"
+  },
+  {
+    "birthday_date": "1963-03-15",
+    "email": "Zuma1@mail.ru",
+    "first_name": "Stanislav",
+    "last_name": "Belov",
+    "password": "BVstJMvE",
+    "username": "Zuma1"
+  },
+  {
+    "birthday_date": "1983-11-19",
+    "email": "Gulf1@mail.ru",
+    "first_name": "Anton",
+    "last_name": "Belyaev",
+    "password": "nqEwWcKg",
+    "username": "Gulf1"
+  },
+  {
+    "birthday_date": "1973-09-13",
+    "email": "Rust2@mail.ru",
+    "first_name": "Andrey",
+    "last_name": "Solovev",
+    "password": "edroOIfG",
+    "username": "Rust2"
+  },
+  {
+    "birthday_date": "2000-02-09",
+    "email": "Dona1@mail.ru",
+    "first_name": "Murat",
+    "last_name": "Sidorov",
+    "password": "qIfxVaUT",
+    "username": "Dona1"
+  },
+  {
+    "birthday_date": "1965-05-23",
+    "email": "Burn1@mail.ru",
+    "first_name": "Foma",
+    "last_name": "Chernyshev",
+    "password": "mnTNZydp",
+    "username": "Burn1"
+  },
+  {
+    "birthday_date": "1989-06-09",
+    "email": "Ilya1@mail.ru",
+    "first_name": "Gertruda",
+    "last_name": "Gracheva",
+    "password": "ZbZZlWhX",
+    "username": "Ilya1"
+  },
+  {
+    "birthday_date": "1998-09-25",
+    "email": "Temp1@mail.ru",
+    "first_name": "Artem",
+    "last_name": "Solovev",
+    "password": "CgWIcvRa",
+    "username": "Temp1"
+  },
+  {
+    "birthday_date": "1982-03-09",
+    "email": "Mona1@mail.ru",
+    "first_name": "Yanina",
+    "last_name": "Osipova",
+    "password": "iabkznMi",
+    "username": "Mona1"
+  },
+  {
+    "birthday_date": "1987-03-26",
+    "email": "Gulf2@mail.ru",
+    "first_name": "Karina",
+    "last_name": "Popova",
+    "password": "piGNFpOo",
+    "username": "Gulf2"
+  },
+  {
+    "birthday_date": "1987-02-17",
+    "email": "Tomb1@mail.ru",
+    "first_name": "Tamara",
+    "last_name": "Efimova",
+    "password": "UjmaHbPT",
+    "username": "Tomb1"
+  },
+  {
+    "birthday_date": "2001-08-22",
+    "email": "Gulf3@mail.ru",
+    "first_name": "Alena",
+    "last_name": "Bykova",
+    "password": "rHFDZVqO",
+    "username": "Gulf3"
+  },
+  {
+    "birthday_date": "1993-09-20",
+    "email": "Gor2@mail.ru",
+    "first_name": "Zara",
+    "last_name": "Polyakova",
+    "password": "DpCSbQly",
+    "username": "Gor2"
+  },
+  {
+    "birthday_date": "1964-12-16",
+    "email": "Dorn1@mail.ru",
+    "first_name": "Evgenya",
+    "last_name": "Frolova",
+    "password": "uNXsRyHk",
+    "username": "Dorn1"
+  },
+  {
+    "birthday_date": "1973-07-09",
+    "email": "Stark1@mail.ru",
+    "first_name": "Matvey",
+    "last_name": "Kalinin",
+    "password": "UdvLSvsS",
+    "username": "Stark1"
+  },
+  {
+    "birthday_date": "1993-01-27",
+    "email": "Nutic2@mail.ru",
+    "first_name": "Alevtina",
+    "last_name": "Danilova",
+    "password": "wTqrygaD",
+    "username": "Nutic2"
+  },
+  {
+    "birthday_date": "1966-05-14",
+    "email": "Yorg1@mail.ru",
+    "first_name": "Tixon",
+    "last_name": "Golubev",
+    "password": "ZpVEazoZ",
+    "username": "Yorg1"
+  },
+  {
+    "birthday_date": "1981-04-15",
+    "email": "Quick1@mail.ru",
+    "first_name": "Laura",
+    "last_name": "Alekseeva",
+    "password": "QcERptqr",
+    "username": "Quick1"
+  },
+  {
+    "birthday_date": "1999-08-23",
+    "email": "Gulf4@mail.ru",
+    "first_name": "Makar",
+    "last_name": "Romanov",
+    "password": "twvJWQEZ",
+    "username": "Gulf4"
+  },
+  {
+    "birthday_date": "1968-10-01",
+    "email": "Bull2@mail.ru",
+    "first_name": "Stefanya",
+    "last_name": "Markova",
+    "password": "IfRqYOCo",
+    "username": "Bull2"
+  },
+  {
+    "birthday_date": "1982-05-01",
+    "email": "Freeze2@mail.ru",
+    "first_name": "Gennadiy",
+    "last_name": "Afanasev",
+    "password": "zSSLEEZh",
+    "username": "Freeze2"
+  },
+  {
+    "birthday_date": "1971-10-01",
+    "email": "Temp2@mail.ru",
+    "first_name": "Kondrat",
+    "last_name": "Maksimov",
+    "password": "OqwglpWE",
+    "username": "Temp2"
+  },
+  {
+    "birthday_date": "2001-01-31",
+    "email": "Cypro3@mail.ru",
+    "first_name": "Gabriella",
+    "last_name": "Kuznetsova",
+    "password": "TevTWAkp",
+    "username": "Cypro3"
+  },
+  {
+    "birthday_date": "1984-10-06",
+    "email": "Gulf5@mail.ru",
+    "first_name": "German",
+    "last_name": "Ponomarev",
+    "password": "RyIqXMzh",
+    "username": "Gulf5"
+  },
+  {
+    "birthday_date": "1991-04-01",
+    "email": "Jok1@mail.ru",
+    "first_name": "Ekaterina",
+    "last_name": "Volkova",
+    "password": "nkBwbcRu",
+    "username": "Jok1"
+  },
+  {
+    "birthday_date": "1986-07-22",
+    "email": "Snack1@mail.ru",
+    "first_name": "Zara",
+    "last_name": "Popova",
+    "password": "tbtjfEcX",
+    "username": "Snack1"
+  },
+  {
+    "birthday_date": "1982-06-26",
+    "email": "Tor1@mail.ru",
+    "first_name": "Miron",
+    "last_name": "Krylov",
+    "password": "CIdYorlO",
+    "username": "Tor1"
+  },
+  {
+    "birthday_date": "1963-08-14",
+    "email": "Looter2@mail.ru",
+    "first_name": "Lusia",
+    "last_name": "Gavrilova",
+    "password": "kCwpIwFz",
+    "username": "Looter2"
+  },
+  {
+    "birthday_date": "1964-06-07",
+    "email": "Puma1@mail.ru",
+    "first_name": "Maksim",
+    "last_name": "Rodionov",
+    "password": "FothqqHE",
+    "username": "Puma1"
+  },
+  {
+    "birthday_date": "1978-06-02",
+    "email": "Hazar1@mail.ru",
+    "first_name": "Uliana",
+    "last_name": "Soboleva",
+    "password": "YpetOitd",
+    "username": "Hazar1"
+  },
+  {
+    "birthday_date": "1998-10-14",
+    "email": "Parnat2@mail.ru",
+    "first_name": "Georgiy",
+    "last_name": "Korolev",
+    "password": "kFvZPwGT",
+    "username": "Parnat2"
+  },
+  {
+    "birthday_date": "1968-08-15",
+    "email": "Stark2@mail.ru",
+    "first_name": "Pelageya",
+    "last_name": "Isaeva",
+    "password": "fPIJcKvD",
+    "username": "Stark2"
+  },
+  {
+    "birthday_date": "1994-08-23",
+    "email": "Bato1@mail.ru",
+    "first_name": "Viktorya",
+    "last_name": "Medvedeva",
+    "password": "wTycJmup",
+    "username": "Bato1"
+  },
+  {
+    "birthday_date": "1986-07-12",
+    "email": "Truck2@mail.ru",
+    "first_name": "Egor",
+    "last_name": "Voronin",
+    "password": "vGxpjLme",
+    "username": "Truck2"
+  },
+  {
+    "birthday_date": "1972-03-25",
+    "email": "Drozd1@mail.ru",
+    "first_name": "Lara",
+    "last_name": "Yakovleva",
+    "password": "rAqdlhGc",
+    "username": "Drozd1"
+  },
+  {
+    "birthday_date": "1985-09-25",
+    "email": "Kramp1@mail.ru",
+    "first_name": "Gennadiy",
+    "last_name": "Konovalov",
+    "password": "gNRpOYgG",
+    "username": "Kramp1"
+  },
+  {
+    "birthday_date": "1989-04-05",
+    "email": "Bud1@mail.ru",
+    "first_name": "Stanislav",
+    "last_name": "Voronin",
+    "password": "lkddcLrR",
+    "username": "Bud1"
+  },
+  {
+    "birthday_date": "1978-02-22",
+    "email": "Quick2@mail.ru",
+    "first_name": "Denis",
+    "last_name": "Bogdanov",
+    "password": "ToliJTGR",
+    "username": "Quick2"
+  },
+  {
+    "birthday_date": "1981-03-09",
+    "email": "Tomb2@mail.ru",
+    "first_name": "Stanislav",
+    "last_name": "Medvedev",
+    "password": "lmbaCkuO",
+    "username": "Tomb2"
+  },
+  {
+    "birthday_date": "1991-01-25",
+    "email": "Riko3@mail.ru",
+    "first_name": "Paranya",
+    "last_name": "Vorobeva",
+    "password": "sjOiALKV",
+    "username": "Riko3"
+  },
+  {
+    "birthday_date": "1972-06-21",
+    "email": "Temp3@mail.ru",
+    "first_name": "Ignat",
+    "last_name": "Fedotov",
+    "password": "FSfqnLFc",
+    "username": "Temp3"
+  },
+  {
+    "birthday_date": "1987-11-03",
+    "email": "Freeze3@mail.ru",
+    "first_name": "Darya",
+    "last_name": "Martynova",
+    "password": "RkxczUmm",
+    "username": "Freeze3"
+  },
+  {
+    "birthday_date": "1976-05-09",
+    "email": "Nutic3@mail.ru",
+    "first_name": "Yadviga",
+    "last_name": "Zakharova",
+    "password": "cOSdgizS",
+    "username": "Nutic3"
+  },
+  {
+    "birthday_date": "1999-10-25",
+    "email": "Bato2@mail.ru",
+    "first_name": "Oleg",
+    "last_name": "Solovev",
+    "password": "jTMhGuwS",
+    "username": "Bato2"
+  },
+  {
+    "birthday_date": "1981-09-23",
+    "email": "Doc1@mail.ru",
+    "first_name": "Tatyana",
+    "last_name": "Afanaseva",
+    "password": "ALVqpuiG",
+    "username": "Doc1"
+  },
+  {
+    "birthday_date": "1997-01-15",
+    "email": "Drozd2@mail.ru",
+    "first_name": "Polina",
+    "last_name": "Makarova",
+    "password": "dwLWZrhN",
+    "username": "Drozd2"
+  },
+  {
+    "birthday_date": "2000-09-08",
+    "email": "Askon3@mail.ru",
+    "first_name": "Klavdya",
+    "last_name": "Sorokina",
+    "password": "ZXyEJaGH",
+    "username": "Askon3"
+  },
+  {
+    "birthday_date": "2001-05-29",
+    "email": "Spike2@mail.ru",
+    "first_name": "Karina",
+    "last_name": "Morozova",
+    "password": "asHqaCkW",
+    "username": "Spike2"
+  },
+  {
+    "birthday_date": "1984-01-31",
+    "email": "Askon4@mail.ru",
+    "first_name": "Stefanya",
+    "last_name": "Pavlova",
+    "password": "WJhHwenW",
+    "username": "Askon4"
+  },
+  {
+    "birthday_date": "1976-11-30",
+    "email": "Urgen2@mail.ru",
+    "first_name": "Filipp",
+    "last_name": "Zaytsev",
+    "password": "lxpcdmhK",
+    "username": "Urgen2"
+  },
+  {
+    "birthday_date": "1982-04-03",
+    "email": "Mona2@mail.ru",
+    "first_name": "Kirill",
+    "last_name": "Petrov",
+    "password": "MUuoYPWj",
+    "username": "Mona2"
+  },
+  {
+    "birthday_date": "1965-04-19",
+    "email": "Spike3@mail.ru",
+    "first_name": "Boleslav",
+    "last_name": "Novikov",
+    "password": "ZAVOMvLZ",
+    "username": "Spike3"
+  },
+  {
+    "birthday_date": "1985-12-27",
+    "email": "Sky2@mail.ru",
+    "first_name": "Zakhar",
+    "last_name": "Volkov",
+    "password": "lavTMige",
+    "username": "Sky2"
+  },
+  {
+    "birthday_date": "1990-07-22",
+    "email": "Zak4@mail.ru",
+    "first_name": "Edvard",
+    "last_name": "Zhukov",
+    "password": "tJQmOCYW",
+    "username": "Zak4"
+  },
+  {
+    "birthday_date": "1981-05-07",
+    "email": "Tomb3@mail.ru",
+    "first_name": "Anatoliy",
+    "last_name": "Alekseev",
+    "password": "aIUdWMEN",
+    "username": "Tomb3"
+  },
+  {
+    "birthday_date": "1980-02-11",
+    "email": "Spike4@mail.ru",
+    "first_name": "Igor",
+    "last_name": "Markov",
+    "password": "TFpGHbLI",
+    "username": "Spike4"
+  },
+  {
+    "birthday_date": "1971-10-21",
+    "email": "Quick3@mail.ru",
+    "first_name": "Gleb",
+    "last_name": "Ovchinnikov",
+    "password": "zdfsaaVy",
+    "username": "Quick3"
+  },
+  {
+    "birthday_date": "1993-09-07",
+    "email": "Frost1@mail.ru",
+    "first_name": "Ernest",
+    "last_name": "Makarov",
+    "password": "spmqhRnE",
+    "username": "Frost1"
+  },
+  {
+    "birthday_date": "1991-07-06",
+    "email": "Jorg1@mail.ru",
+    "first_name": "Saveliy",
+    "last_name": "Andreev",
+    "password": "hmWgbjFg",
+    "username": "Jorg1"
+  },
+  {
+    "birthday_date": "1995-04-20",
+    "email": "Nutic4@mail.ru",
+    "first_name": "Igor",
+    "last_name": "Davydov",
+    "password": "BxhoMIRl",
+    "username": "Nutic4"
+  },
+  {
+    "birthday_date": "1983-10-06",
+    "email": "Sky3@mail.ru",
+    "first_name": "Vaicheslav",
+    "last_name": "Goncharov",
+    "password": "QXkgEBUK",
+    "username": "Sky3"
+  },
+  {
+    "birthday_date": "1983-09-03",
+    "email": "Bud2@mail.ru",
+    "first_name": "Saveliy",
+    "last_name": "Grigorev",
+    "password": "MHrUeurO",
+    "username": "Bud2"
+  },
+  {
+    "birthday_date": "2001-10-26",
+    "email": "Cult1@mail.ru",
+    "first_name": "Laura",
+    "last_name": "Aleksandrova",
+    "password": "DZVVRdqD",
+    "username": "Cult1"
+  },
+  {
+    "birthday_date": "1991-08-07",
+    "email": "Temp4@mail.ru",
+    "first_name": "Olga",
+    "last_name": "Zakharova",
+    "password": "PQlftyUO",
+    "username": "Temp4"
+  },
+  {
+    "birthday_date": "1970-02-24",
+    "email": "Spike5@mail.ru",
+    "first_name": "Uliana",
+    "last_name": "Davydova",
+    "password": "OxhGmDwT",
+    "username": "Spike5"
+  },
+  {
+    "birthday_date": "1984-02-14",
+    "email": "Spaceman2@mail.ru",
+    "first_name": "Igor",
+    "last_name": "Kozlov",
+    "password": "WyVEHnHi",
+    "username": "Spaceman2"
+  },
+  {
+    "birthday_date": "1967-02-17",
+    "email": "Halk1@mail.ru",
+    "first_name": "Laura",
+    "last_name": "Rodionova",
+    "password": "tpbRGvSt",
+    "username": "Halk1"
+  },
+  {
+    "birthday_date": "1971-02-07",
+    "email": "Freeze4@mail.ru",
+    "first_name": "Fedor",
+    "last_name": "Frolov",
+    "password": "yXAVKdPe",
+    "username": "Freeze4"
+  },
+  {
+    "birthday_date": "1993-01-16",
+    "email": "Stark3@mail.ru",
+    "first_name": "Oksana",
+    "last_name": "Karpova",
+    "password": "DRRIKXJj",
+    "username": "Stark3"
+  },
+  {
+    "birthday_date": "1964-03-05",
+    "email": "Quick4@mail.ru",
+    "first_name": "Svetlana",
+    "last_name": "Petrova",
+    "password": "AfdPRPVW",
+    "username": "Quick4"
+  },
+  {
+    "birthday_date": "1997-06-19",
+    "email": "Looter3@mail.ru",
+    "first_name": "Egor",
+    "last_name": "Kulikov",
+    "password": "URlycwdS",
+    "username": "Looter3"
+  },
+  {
+    "birthday_date": "1978-12-04",
+    "email": "Riko4@mail.ru",
+    "first_name": "Uliana",
+    "last_name": "Isaeva",
+    "password": "fttBVvPu",
+    "username": "Riko4"
+  },
+  {
+    "birthday_date": "1975-07-25",
+    "email": "Ilya2@mail.ru",
+    "first_name": "Anastasya",
+    "last_name": "Potapova",
+    "password": "usDnPhOW",
+    "username": "Ilya2"
+  },
+  {
+    "birthday_date": "2001-12-21",
+    "email": "Sky4@mail.ru",
+    "first_name": "Alena",
+    "last_name": "Tikhonova",
+    "password": "owhZWYBB",
+    "username": "Sky4"
+  },
+  {
+    "birthday_date": "1999-04-15",
+    "email": "Yorg2@mail.ru",
+    "first_name": "Yakov",
+    "last_name": "Baranov",
+    "password": "hfPAikVJ",
+    "username": "Yorg2"
   }
 ]
