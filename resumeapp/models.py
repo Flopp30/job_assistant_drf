@@ -62,7 +62,7 @@ class Resume(CustomBaseModel):
 
     class Meta:
         """Class docstring?"""
-        verbose_name = 'Резюме'
+        verbose_name = 'Резюме'  # 'Резюме' dublication 4 times. Make constant? 'Вид занятости' - 3 times.
         verbose_name_plural = 'Резюме'
 
     def __str__(self):
