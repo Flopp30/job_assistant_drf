@@ -9,15 +9,18 @@ from resumeapp.models import LanguageLevel, Language
 
 
 class CustomUserModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
+    """Class docstring?"""
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserModelSerializer
 
 
 class LanguageLevelModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
+    """Class docstring?"""
     serializer_class = LanguageLevelModelSerializer
     queryset = LanguageLevel.objects.all()
 
 
 class LanguageModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
+    """Class docstring?"""
     queryset = Language.objects.all()
     serializer_class = LanguageModelSerializer
