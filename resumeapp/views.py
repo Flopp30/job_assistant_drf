@@ -38,3 +38,4 @@ class ExperienceModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin,
     """Class docstring?"""
     queryset = Experience.objects.all()
     serializer_class = ExperienceModelSerializer
+"""Too many ancestors 9/7 for classes. Maybe refactor?"""
