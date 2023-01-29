@@ -26,7 +26,8 @@ class Generator:
         "Pick", "Zak", "Zuma", "Quick", "Snack", "Spike", "Tomb", "Halk", "Frost", "Freeze", "Fara", "Mond",
         "Jorg", "Looter", "Splik", "Yorg", "Rust", "Riko", "Dona", "Bark", "Cypro", "Mona", "Nutic", "Nask"
     )
-
+    """Line 23, 24, 25, 26, 27 too long.
+    https://peps.python.org/pep-0008/#maximum-line-length"""
     # шаблон для формирования мужских фио
     first_names_m = (
         "Artem", "Aleksey", "Andrey", "Anton", "Afanasiy", "Alexandr", "Anatoliy",
@@ -39,7 +40,8 @@ class Generator:
         "Saveliy", "Stepan", "Semen", "Stanislav", "Spiridon", "Timofey", "Taras", "Timur", "Tixon", "Trofim",
         "Fedot", "Fedor", "Filipp", "Foma", "Edvard", "Eduard", "Ernest", "Yuriy", "Yan", "Yaroslav", "Yakov"
     )
-
+    """Line 35, 37, 38, 39, 40, 41 too long.
+    https://peps.python.org/pep-0008/#maximum-line-length"""
     # шаблон для формирования женских фио
     first_names_f = (
         "Alla", "Alina", "Alevtina", "Anna", "Anastasya", "Agata", "Alena", "Broneslava", "Barbara", "Viktorya",
@@ -52,7 +54,8 @@ class Generator:
         "Snejanna", "Tatyana", "Tamara", "Tonya", "Uliana", "Ustina", "Faina", "Fedora", "Hloya", "Evelina", "Ella",
         "Emma", "Yana", "Yanina", "Yaroslava", "Yadviga"
     )
-
+    """Line 47, 49, 51, 52, 53, 54 too long.
+    https://peps.python.org/pep-0008/#maximum-line-length"""
     # шаблон для формирования фамилий
     last_names = (
         "Ivanov", "Smirnov", "Kuznetsov", "Popov", "Vasilev", "Petrov", "Sokolov", "Mikhaylov", "Novikov", "Fedorov",
@@ -68,7 +71,8 @@ class Generator:
         "Naumov", "Potapov", "Zhuravlev", "Ovchinnikov", "Trofimov", "Leonov", "Sobolev", "Ermakov", "Kolesnikov",
         "Goncharov", "Emelyanov", "Nikiforov", "Grachev"
     )
-
+    """Line 61-71 too long.
+    https://peps.python.org/pep-0008/#maximum-line-length"""
     # формирование тестового файла
     def __init__(self, len_passwd=5):
         self.len_passwd = len_passwd  # длина пароля
@@ -103,6 +107,8 @@ class Generator:
         try:
             with open(file_name, "w") as json_file:
                 json.dump(data_list, json_file, default=lambda x: x.__dict__, sort_keys=True, indent=2)
+                """Line 109 too long.
+                https://peps.python.org/pep-0008/#maximum-line-length"""
         except:
             print("Write json-file error!")
 
