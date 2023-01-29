@@ -151,6 +151,7 @@ AUTH_USER_MODEL = 'userapp.CustomUser'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
+        """Delete unused comments out of code?"""
         # 'djangorestframework_camel_case.render.CamelCaseJSONRenderer',
         # 'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer',
         'rest_framework.renderers.JSONRenderer',
