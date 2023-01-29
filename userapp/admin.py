@@ -21,6 +21,7 @@ class UserAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
     list_display = (
         'username', 'email', 'first_name', 'last_name', 'is_active', 'is_superuser', 'date_joined', 'last_login'
     )
+    """Line 22 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     list_filter = ('is_active', 'is_superuser')
     ordering = ('last_login', 'is_active',)
     list_per_page = 20
