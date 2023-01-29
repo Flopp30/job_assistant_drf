@@ -1,8 +1,6 @@
 from django.contrib import admin
-from userapp.models import CustomUser, Language, LanguageLevel, UserLanguageLevel
 
-
-
+from userapp.models import CustomUser
 
 
 class MarkAsDeletedMixin:
@@ -38,36 +36,3 @@ class UserAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
         queryset.update(is_superuser=False)
 
     mark_as_user.short_description = 'Сделать обычным пользователем'
-
-
-@admin.register(LanguageLevel)
-class LanguageLevelAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
-    list_display = (
-        'name', 'created_at', 'updated_at', 'deleted'
-    )
-    list_filter = ('deleted',)
-    ordering = ('-created_at', 'name',)
-    list_per_page = 50
-    search_fields = ('name',)
-    actions = ('mark_as_delete', 'mark_as_active')
-    list_display_links = ('name',)
-
-
-@admin.register(Language)
-class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
-    list_display = (
-        'name', 'created_at', 'updated_at', 'deleted'
-    )
-    list_filter = ('deleted',)
-    ordering = ('-created_at', 'name',)
-    list_per_page = 50
-    search_fields = ('name',)
-    actions = ('mark_as_delete', 'mark_as_active')
-    list_display_links = ('name',)
-
-
-@admin.register(UserLanguageLevel)
-class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
-    list_display = (
-        'user', 'language', 'level'
-    )

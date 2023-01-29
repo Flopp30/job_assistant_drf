@@ -1,5 +1,6 @@
 from rest_framework.serializers import ModelSerializer
-from userapp.models import CustomUser, LanguageLevel, Language
+from userapp.models import CustomUser
+from resumeapp.models import LanguageLevel, Language
 
 
 class CustomUserModelSerializer(ModelSerializer):

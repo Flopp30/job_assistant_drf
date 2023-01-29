@@ -2,8 +2,9 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin
 
 from userapp.serializers import LanguageLevelModelSerializer, LanguageModelSerializer
-from userapp.models import CustomUser, LanguageLevel, Language
+from userapp.models import CustomUser
 from userapp.serializers import CustomUserModelSerializer
+from resumeapp.models import LanguageLevel, Language
 
 
 class CustomUserModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
@@ -13,6 +14,7 @@ class CustomUserModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin,
 
 class LanguageLevelModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
     serializer_class = LanguageLevelModelSerializer
+    queryset = LanguageLevel.objects.all()
 
 
 class LanguageModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):

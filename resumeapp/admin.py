@@ -1,6 +1,6 @@
 from django.contrib import admin
 from resumeapp.models import (
-    Employment, Schedule, KeySkill, Resume, Experience
+    Employment, Schedule, KeySkill, Resume, Experience, ResumeLanguageLevel, Language, LanguageLevel
 )
 from userapp.admin import MarkAsDeletedMixin
 
@@ -44,7 +44,6 @@ class SkillAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
     list_display_links = ('name',)
 
 
-
 @admin.register(Resume)
 class ResumeAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
     list_display = (
@@ -72,3 +71,36 @@ class ExperienceAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
     search_fields = ('name', 'description')
     actions = ('mark_as_delete', 'mark_as_active')
     list_display_links = ('name',)
+
+
+@admin.register(LanguageLevel)
+class LanguageLevelAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    list_display = (
+        'name', 'created_at', 'updated_at', 'deleted'
+    )
+    list_filter = ('deleted',)
+    ordering = ('-created_at', 'name',)
+    list_per_page = 50
+    search_fields = ('name',)
+    actions = ('mark_as_delete', 'mark_as_active')
+    list_display_links = ('name',)
+
+
+@admin.register(Language)
+class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    list_display = (
+        'name', 'created_at', 'updated_at', 'deleted'
+    )
+    list_filter = ('deleted',)
+    ordering = ('-created_at', 'name',)
+    list_per_page = 50
+    search_fields = ('name',)
+    actions = ('mark_as_delete', 'mark_as_active')
+    list_display_links = ('name',)
+
+
+@admin.register(ResumeLanguageLevel)
+class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    list_display = (
+        'resume', 'language', 'level'
+    )

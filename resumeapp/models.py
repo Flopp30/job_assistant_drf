@@ -79,3 +79,42 @@ class Experience(CustomBaseModel):
 
     def __str__(self):
         return self.name
+
+
+class LanguageLevel(CustomBaseModel):
+    """"Модель уровня владения языком (A2, B1, C1, родной и другие)."""
+    name = models.CharField(unique=True, verbose_name='Уровень владения',
+                            max_length=25)  # Название уровня владения языком
+
+    class Meta:
+        verbose_name = 'Уровень владения языком'
+        verbose_name_plural = 'Уровни владения языком'
+
+    def __str__(self):
+        return self.name
+
+
+class Language(CustomBaseModel):
+    """"Модель языка (Английский, Русский и другие)."""
+    name = models.CharField(unique=True, verbose_name='Язык', max_length=25)  # Название языка
+
+    class Meta:
+        verbose_name = 'Язык'
+        verbose_name_plural = 'Языки'
+
+    def __str__(self):
+        return self.name
+
+
+class ResumeLanguageLevel(CustomBaseModel):
+    """"Модель уровня языка пользователя (Английский, Русский и другие)."""
+    resume = models.ForeignKey(Resume, verbose_name='Резюме', on_delete=models.CASCADE,
+                               related_name='resumeLanguageLevels')  # Пользователь, подавший резюме
+    language = models.ForeignKey(Language, verbose_name='Название языка', on_delete=models.CASCADE,
+                                 related_name='userLanguages')  # Уровень владения языком
+    level = models.ForeignKey(LanguageLevel, verbose_name='Уровень владения', on_delete=models.CASCADE,
+                              related_name='userLevels')  # Уровень владения языком
+
+    class Meta:
+        verbose_name = 'Язык пользователя'
+        verbose_name_plural = 'Языки пользователя'
