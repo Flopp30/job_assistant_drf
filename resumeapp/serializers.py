@@ -1,5 +1,6 @@
 """Module docstrings?"""
 from rest_framework.serializers import ModelSerializer
+"""Line 4 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
 from resumeapp.models import Employment, Schedule, KeySkill, Resume, Experience, LanguageLevel, Language, \
     ResumeLanguageLevel
 from userapp.serializers import CustomUserModelSerializer
