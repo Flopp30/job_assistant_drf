@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from uuid import uuid4
+"""Standard import should be placed before django.db..."""
 
 NULLABLE = {'blank': True, 'null': True}
 
