@@ -5,6 +5,7 @@ from userapp.models import CustomUser
 
 
 class MarkAsDeletedMixin:
+    """Class docstring?"""
     def mark_as_delete(self, request, queryset):
         """Method docstring?"""
         queryset.update(deleted=True)
@@ -20,6 +21,7 @@ class MarkAsDeletedMixin:
 
 @admin.register(CustomUser)
 class UserAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    """Class docstring?"""
     list_display = (
         'username', 'email', 'first_name', 'last_name', 'is_active', 'is_superuser', 'date_joined', 'last_login'
     )
