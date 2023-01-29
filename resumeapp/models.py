@@ -10,6 +10,7 @@ class Employment(CustomBaseModel):
     name = models.CharField(unique=True, verbose_name='Вид занятости', max_length=50)  # Название вида занятости
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Вид занятости'
         verbose_name_plural = 'Виды занятости'
 
@@ -23,6 +24,7 @@ class Schedule(CustomBaseModel):
     name = models.CharField(unique=True, verbose_name='Тип графика', max_length=50)  # Название вида графика работы
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'График работы'
         verbose_name_plural = 'Графики работы'
 
@@ -36,6 +38,7 @@ class KeySkill(CustomBaseModel):
     name = models.CharField(unique=True, verbose_name='Название навыка', max_length=25)  # Название навыка
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Ключевые навыки'
         verbose_name_plural = 'Ключевые навыки'
 
@@ -58,6 +61,7 @@ class Resume(CustomBaseModel):
     about = models.TextField(verbose_name='Обо мне')  # Доп информация о человеке
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Резюме'
         verbose_name_plural = 'Резюме'
 
@@ -79,6 +83,7 @@ class Experience(CustomBaseModel):
     """Line 72, 73, 75, 76 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     # TODO поправить автоназначение started_at и finished_at
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Предыдущее место работы'
         verbose_name_plural = 'Предыдущие места работы'
 
@@ -92,6 +97,7 @@ class LanguageLevel(CustomBaseModel):
                             max_length=25)  # Название уровня владения языком
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Уровень владения языком'
         verbose_name_plural = 'Уровни владения языком'
 
@@ -104,6 +110,7 @@ class Language(CustomBaseModel):
     name = models.CharField(unique=True, verbose_name='Язык', max_length=25)  # Название языка
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Язык'
         verbose_name_plural = 'Языки'
 
@@ -122,5 +129,6 @@ class ResumeLanguageLevel(CustomBaseModel):
                               related_name='userLevels')  # Уровень владения языком
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Язык пользователя'
         verbose_name_plural = 'Языки пользователя'
