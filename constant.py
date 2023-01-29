@@ -1,3 +1,4 @@
+"""Module docstring?"""
 EMPLOYMENT_LIST = [
     'стажировка',
     'частичная занятость',
