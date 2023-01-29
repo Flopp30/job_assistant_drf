@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 
 from constant import ABOUT_ME, PROFESSIONAL_ROLES, DESCRIPTIONS
+"""Line 10 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
 from resumeapp.models import Employment, Schedule, Language, KeySkill, Resume, LanguageLevel, ResumeLanguageLevel, \
     Experience
 from userapp.models import CustomUser
@@ -45,6 +46,7 @@ def fill_resume():
             language = choice(languages)
             language_level = choice(language_levels)
             ResumeLanguageLevel.objects.create(resume=resume, language=language, level=language_level)
+            """Line 47 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
         resume.employment.add(employment)
         resume.schedule.add(schedule)
         resume.key_skills.add(key_skill)
@@ -57,7 +59,7 @@ def fill_experience():
     descriptions = DESCRIPTIONS
     for resume, name, role, desc in zip(resumes, previous_jobs_name, professional_role, descriptions):
         Experience.objects.create(resume=resume, name=name, professional_role=role, description=desc)
-
+"""Line 58, 59 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
 
 class Command(BaseCommand):
 
