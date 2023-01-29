@@ -15,7 +15,7 @@ class CustomBaseModel(models.Model):
     """Line 12, 13 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     deleted = models.BooleanField(default=False, verbose_name='Удален?')  # Дата удаления
 
-    class Meta:
+    class Meta:  # Too few public methods. Refactor?
         """Class docstring?"""
         abstract = True
 
