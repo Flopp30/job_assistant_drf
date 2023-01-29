@@ -39,9 +39,9 @@ Api для внутреннего пользования. Пользовател
 7) Выполните миграции в базу данных ```python manage.py migrate```
 8) *Для тестов: заполнить базу данными 
    ```
-   python3 manage.py create_superuser
-   python3 manage.py fill_constant
-   python3 manage.py fill_testing_data
+   python manage.py create_superuser
+   python manage.py fill_constant
+   python manage.py fill_testing_data
    ```
 9) Запустите DRF приложение ```python manage.py runserver``` (по умолчанию запускается 127.0.0.1:8000)
 
