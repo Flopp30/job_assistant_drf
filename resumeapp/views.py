@@ -1,7 +1,6 @@
 """Module docstrings?"""
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.viewsets import GenericViewSet
-from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin
+
 from resumeapp.models import Employment, Schedule, KeySkill, Resume, Experience
 from resumeapp.serializers import (
     ScheduleModelSerializer, KeySkillModelSerializer, ResumeModelSerializer,
@@ -35,7 +34,8 @@ class ResumeModelViewSet(ModelViewSet):
 
 class ExperienceModelViewSet(ModelViewSet):
 
-"""Line 12 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
+    """Line 12 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     queryset = Experience.objects.all()
     serializer_class = ExperienceModelSerializer
+
 """Too many ancestors 9/7 for classes. Maybe refactor?"""
