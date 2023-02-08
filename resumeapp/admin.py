@@ -1,3 +1,4 @@
+"""Module docstring?"""
 from django.contrib import admin
 from resumeapp.models import (
     Employment, Schedule, KeySkill, Resume, Experience, ResumeLanguageLevel, Language, LanguageLevel
@@ -7,6 +8,7 @@ from userapp.admin import MarkAsDeletedMixin
 
 @admin.register(Employment)
 class EmploymentAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    """Class docstring?"""
     list_display = (
         'name', 'created_at', 'updated_at', 'deleted'
     )
@@ -20,6 +22,7 @@ class EmploymentAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
 
 @admin.register(Schedule)
 class ScheduleAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    """Class docstring?"""
     list_display = (
         'name', 'created_at', 'updated_at', 'deleted'
     )
@@ -33,6 +36,7 @@ class ScheduleAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
 
 @admin.register(KeySkill)
 class SkillAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    """Class docstring?"""
     list_display = (
         'name', 'created_at', 'updated_at', 'deleted'
     )
@@ -46,6 +50,7 @@ class SkillAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
 
 @admin.register(Resume)
 class ResumeAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    """Class docstring?"""
     list_display = (
         'user',
         'about', 'created_at', 'deleted'
@@ -60,6 +65,7 @@ class ResumeAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
 
 @admin.register(Experience)
 class ExperienceAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    """Class docstring?"""
     list_display = (
         'resume', 'name',
         'description', 'started_at', 'finished_at',
@@ -75,6 +81,7 @@ class ExperienceAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
 
 @admin.register(LanguageLevel)
 class LanguageLevelAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    """Class docstring?"""
     list_display = (
         'name', 'created_at', 'updated_at', 'deleted'
     )
@@ -88,6 +95,7 @@ class LanguageLevelAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
 
 @admin.register(Language)
 class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+    """Class docstring?"""
     list_display = (
         'name', 'created_at', 'updated_at', 'deleted'
     )
@@ -100,7 +108,8 @@ class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
 
 
 @admin.register(ResumeLanguageLevel)
-class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):
+class LanguageAdmin(admin.ModelAdmin, MarkAsDeletedMixin):  # Class already defined at line 97.
+    """Class docstring?"""
     list_display = (
         'resume', 'language', 'level'
     )

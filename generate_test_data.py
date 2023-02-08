@@ -1,3 +1,4 @@
+"""Module docstring?"""
 from string import ascii_letters
 
 import json
@@ -6,7 +7,8 @@ from datetime import timedelta, datetime
 
 
 # Класс тестовых данных, сериализуется в json
-class TestData:
+class TestData:  # Too few public methods. 0/2
+    """Class docstring?"""
     username = ""
     password = ""
     first_name = ""
@@ -16,7 +18,8 @@ class TestData:
 
 
 # класс генерации файла с тестовыми данными
-class Generator:
+class Generator:  # Too few public methods. 1/2
+    """Class docstring?"""
     # шаблон для формирования username
     user_names = (
         "Dvin", "Stark", "Bull", "Puma", "Askon", "Truck", "Bomb", "Bato", "Lars", "Sky", "Bart", "Brin",
@@ -25,7 +28,8 @@ class Generator:
         "Pick", "Zak", "Zuma", "Quick", "Snack", "Spike", "Tomb", "Halk", "Frost", "Freeze", "Fara", "Mond",
         "Jorg", "Looter", "Splik", "Yorg", "Rust", "Riko", "Dona", "Bark", "Cypro", "Mona", "Nutic", "Nask"
     )
-
+    """Line 23, 24, 25, 26, 27 too long.
+    https://peps.python.org/pep-0008/#maximum-line-length"""
     # шаблон для формирования мужских фио
     first_names_m = (
         "Artem", "Aleksey", "Andrey", "Anton", "Afanasiy", "Alexandr", "Anatoliy",
@@ -38,7 +42,8 @@ class Generator:
         "Saveliy", "Stepan", "Semen", "Stanislav", "Spiridon", "Timofey", "Taras", "Timur", "Tixon", "Trofim",
         "Fedot", "Fedor", "Filipp", "Foma", "Edvard", "Eduard", "Ernest", "Yuriy", "Yan", "Yaroslav", "Yakov"
     )
-
+    """Line 35, 37, 38, 39, 40, 41 too long.
+    https://peps.python.org/pep-0008/#maximum-line-length"""
     # шаблон для формирования женских фио
     first_names_f = (
         "Alla", "Alina", "Alevtina", "Anna", "Anastasya", "Agata", "Alena", "Broneslava", "Barbara", "Viktorya",
@@ -51,7 +56,8 @@ class Generator:
         "Snejanna", "Tatyana", "Tamara", "Tonya", "Uliana", "Ustina", "Faina", "Fedora", "Hloya", "Evelina", "Ella",
         "Emma", "Yana", "Yanina", "Yaroslava", "Yadviga"
     )
-
+    """Line 47, 49, 51, 52, 53, 54 too long.
+    https://peps.python.org/pep-0008/#maximum-line-length"""
     # шаблон для формирования фамилий
     last_names = (
         "Ivanov", "Smirnov", "Kuznetsov", "Popov", "Vasilev", "Petrov", "Sokolov", "Mikhaylov", "Novikov", "Fedorov",
@@ -67,7 +73,8 @@ class Generator:
         "Naumov", "Potapov", "Zhuravlev", "Ovchinnikov", "Trofimov", "Leonov", "Sobolev", "Ermakov", "Kolesnikov",
         "Goncharov", "Emelyanov", "Nikiforov", "Grachev"
     )
-
+    """Line 61-71 too long.
+    https://peps.python.org/pep-0008/#maximum-line-length"""
     # формирование тестового файла
     def __init__(self, len_passwd=5):
         self.len_passwd = len_passwd  # длина пароля
@@ -82,13 +89,14 @@ class Generator:
     # count_person - кол-во генерируемых записей (по умолчанию 500)
     # restart - сбросить счетчик аккаунтов для предыдущей генерации
     def generate_json(self, file_name, count_person, restart):
+        """Method docstring?"""
         data_list = []
 
         # сформировать словарь генерации, если указано или словарь пуст
         if restart or len(self.dict_names) == 0:
             self._dict_gen()
 
-        for i in range(0, count_person):
+        for i in range(0, count_person):  # Unused variable 'i'. Use _ instead.
             data = TestData()
             user_name = self._get_username()
             data.first_name, data.last_name = self._get_name()
@@ -100,9 +108,11 @@ class Generator:
             data_list.append(data)
 
         try:
-            with open(file_name, "w") as json_file:
+            with open(file_name, "w") as json_file:  # Using open() without encoding.
                 json.dump(data_list, json_file, default=lambda x: x.__dict__, sort_keys=True, indent=2)
-        except:
+                """Line 109 too long.
+                https://peps.python.org/pep-0008/#maximum-line-length"""
+        except:  # No exception type specified.
             print("Write json-file error!")
 
     # генерация username
@@ -116,6 +126,7 @@ class Generator:
     # генерация пароля
     def _get_password(self):
         return ''.join(rnd.choice(ascii_letters) for i in range(self.len_passw))
+    """Instance of 'Generator' has no 'len_passw' member. Maybe 'len_passwd'? Line 128: range(self.len_passw))"""
 
     # генерация имени, возвращает first_name, last_name
     def _get_name(self):
@@ -134,6 +145,7 @@ class Generator:
 
 
 def main():
+    """Function docstring?"""
     generator = Generator(8)
     generator.generate_json("json/users.json", 100, True)
 

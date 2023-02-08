@@ -1,3 +1,4 @@
+"""Module docstring?"""
 import json
 from random import choice, randint
 
@@ -5,12 +6,14 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 
 from constant import ABOUT_ME, PROFESSIONAL_ROLES, DESCRIPTIONS
+"""Line 10 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
 from resumeapp.models import Employment, Schedule, Language, KeySkill, Resume, LanguageLevel, ResumeLanguageLevel, \
     Experience
 from userapp.models import CustomUser
 
 
 def load_from_json(file_name):
+    """Function docstring?"""
     with open(f'{settings.JSON_DIR}/{file_name}.json', 'r') as json_file:
         return json.load(json_file)
 
@@ -24,13 +27,14 @@ def fill_users():
 
 
 def fill_resume():
+    """Function docstring?"""
     users = CustomUser.objects.all()
     employments = Employment.objects.all()
     schedules = Schedule.objects.all()
     languages = Language.objects.all()
     language_levels = LanguageLevel.objects.all()
     key_skills = KeySkill.objects.all()
-
+    """Too many local variables. Refactor?"""
     Resume.objects.all().delete()
     for about_me, prof_role in zip(ABOUT_ME, PROFESSIONAL_ROLES):
         user = choice(users)
@@ -39,26 +43,30 @@ def fill_resume():
         schedule = choice(schedules)
 
         resume = Resume.objects.create(user=user, professional_role=prof_role, about=about_me)
+        """Variable name "n" doesn't conform to snake_case naming style."""
         n = randint(1, 4)
-        for i in range(n):
+        for i in range(n):  # Unused variable i. Use _ instead.
             language = choice(languages)
             language_level = choice(language_levels)
             ResumeLanguageLevel.objects.create(resume=resume, language=language, level=language_level)
+            """Line 47 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
         resume.employment.add(employment)
         resume.schedule.add(schedule)
         resume.key_skills.add(key_skill)
 
 
 def fill_experience():
+    """Function docstring?"""
     resumes = Resume.objects.all()
     previous_jobs_name = ['ЦИАН', 'EPAM', 'Google', 'Yandex', 'Mail', 'Rambler']
     professional_role = PROFESSIONAL_ROLES
     descriptions = DESCRIPTIONS
     for resume, name, role, desc in zip(resumes, previous_jobs_name, professional_role, descriptions):
         Experience.objects.create(resume=resume, name=name, professional_role=role, description=desc)
-
+"""Line 58, 59 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
 
 class Command(BaseCommand):
+    """Class docstring?"""
 
     def handle(self, *args, **options):
         fill_users()

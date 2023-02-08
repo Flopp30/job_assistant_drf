@@ -10,7 +10,6 @@ dot_env = BASE_DIR / '.env'
 load_dotenv(dotenv_path=dot_env)
 
 SECRET_KEY = 'django-insecure-brq6l=%n)&803%=a=5-ps26uus01qgj8)@-qn-4behmkmd=7ge'
-
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = []
