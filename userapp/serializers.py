@@ -6,8 +6,7 @@ from resumeapp.models import LanguageLevel, Language
 class CustomUserModelSerializer(ModelSerializer):
     class Meta:
         model = CustomUser
-        # fields = '__all__'
-        exclude = 'id',
+        exclude = 'password', 'last_login', 'is_superuser', 'groups', 'user_permissions'
 
 
 class LanguageLevelModelSerializer(ModelSerializer):
@@ -17,7 +16,6 @@ class LanguageLevelModelSerializer(ModelSerializer):
 
 
 class LanguageModelSerializer(ModelSerializer):
-    # level = LanguageLevelModelSerializer()
     class Meta:
         model = Language
         fields = '__all__'

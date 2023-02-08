@@ -7,31 +7,31 @@ from userapp.serializers import CustomUserModelSerializer
 class EmploymentModelSerializer(ModelSerializer):
     class Meta:
         model = Employment
-        fields = '__all__'
+        exclude = 'created_at', 'updated_at', 'deleted', 'id'
 
 
 class ScheduleModelSerializer(ModelSerializer):
     class Meta:
         model = Schedule
-        fields = '__all__'
+        exclude = 'created_at', 'updated_at', 'deleted', 'id'
 
 
 class KeySkillModelSerializer(ModelSerializer):
     class Meta:
         model = KeySkill
-        fields = '__all__'
+        exclude = 'created_at', 'updated_at', 'deleted', 'id'
 
 
 class LanguageLevelModelSerializer(ModelSerializer):
     class Meta:
         model = LanguageLevel
-        fields = '__all__'
+        fields = 'name',
 
 
 class LanguageModelSerializer(ModelSerializer):
     class Meta:
         model = Language
-        fields = '__all__'
+        fields = 'name',
 
 
 class ResumeLanguageLevelModelSerializer(ModelSerializer):
@@ -40,13 +40,13 @@ class ResumeLanguageLevelModelSerializer(ModelSerializer):
 
     class Meta:
         model = ResumeLanguageLevel
-        fields = '__all__'
+        exclude = 'created_at', 'updated_at', 'deleted', 'id', 'resume'
 
 
 class ExperienceModelSerializer(ModelSerializer):
     class Meta:
         model = Experience
-        fields = '__all__'
+        exclude = 'created_at', 'updated_at', 'deleted', 'id', 'resume'
 
 
 class ResumeModelSerializer(ModelSerializer):
@@ -56,7 +56,6 @@ class ResumeModelSerializer(ModelSerializer):
     key_skills = KeySkillModelSerializer(many=True)
     resumeLanguageLevels = ResumeLanguageLevelModelSerializer(many=True)
     experiences = ExperienceModelSerializer(many=True)
-
 
     class Meta:
         model = Resume

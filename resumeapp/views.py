@@ -1,5 +1,4 @@
-from rest_framework.viewsets import GenericViewSet
-from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin
+from rest_framework.viewsets import ModelViewSet
 
 from resumeapp.models import Employment, Schedule, KeySkill, Resume, Experience
 from resumeapp.serializers import (
@@ -8,26 +7,26 @@ from resumeapp.serializers import (
 )
 
 
-class EmploymentModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
+class EmploymentModelViewSet(ModelViewSet):
     queryset = Employment.objects.all()
     serializer_class = EmploymentModelSerializer
 
 
-class ScheduleModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
+class ScheduleModelViewSet(ModelViewSet):
     queryset = Schedule.objects.all()
     serializer_class = ScheduleModelSerializer
 
 
-class SkillModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
+class SkillModelViewSet(ModelViewSet):
     queryset = KeySkill.objects.all()
     serializer_class = KeySkillModelSerializer
 
 
-class ResumeModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
+class ResumeModelViewSet(ModelViewSet):
     queryset = Resume.objects.all()
     serializer_class = ResumeModelSerializer
 
 
-class ExperienceModelViewSet(GenericViewSet, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, CreateModelMixin):
+class ExperienceModelViewSet(ModelViewSet):
     queryset = Experience.objects.all()
     serializer_class = ExperienceModelSerializer
