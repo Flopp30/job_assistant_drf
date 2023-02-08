@@ -1,3 +1,4 @@
+"""Module docstrings?"""
 from django.db import models
 
 from userapp.models import CustomBaseModel, CustomUser
@@ -5,10 +6,11 @@ from userapp.models import CustomBaseModel, CustomUser
 
 class Employment(CustomBaseModel):
     """"Модель вида занятости (стажировка, частичная занятость, полная занятость и другие)."""
-
+    """Line 10 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     name = models.CharField(unique=True, verbose_name='Вид занятости', max_length=50)  # Название вида занятости
 
-    class Meta:
+    class Meta:  # Too few public methods. Refactor?
+        """Class docstring?"""
         verbose_name = 'Вид занятости'
         verbose_name_plural = 'Виды занятости'
 
@@ -18,9 +20,11 @@ class Employment(CustomBaseModel):
 
 class Schedule(CustomBaseModel):
     """"Модель графика работы (полный день, удаленка, гибкий график и другие)."""
+    """Line 23 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     name = models.CharField(unique=True, verbose_name='Тип графика', max_length=50)  # Название вида графика работы
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'График работы'
         verbose_name_plural = 'Графики работы'
 
@@ -30,9 +34,11 @@ class Schedule(CustomBaseModel):
 
 class KeySkill(CustomBaseModel):
     """"Модель навыков пользователя (Docker, git, Python и другие)."""
+    """Line 36 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     name = models.CharField(unique=True, verbose_name='Название навыка', max_length=25)  # Название навыка
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Ключевые навыки'
         verbose_name_plural = 'Ключевые навыки'
 
@@ -46,6 +52,7 @@ class Resume(CustomBaseModel):
                              on_delete=models.CASCADE,
                              related_name='resumes')  # Пользователь, подавший резюме
     # Информация о желаемой позиции
+    """Line 53, 54, 55 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     professional_role = models.CharField(max_length=150, verbose_name='Должность')  # Позиция на работе/проекте
     employment = models.ManyToManyField(Employment, verbose_name='Вид занятости')  # Вид занятости (стажировка)
     schedule = models.ManyToManyField(Schedule, verbose_name='График работы')  # График работы (полный день, стажировка)
@@ -54,7 +61,8 @@ class Resume(CustomBaseModel):
     about = models.TextField(verbose_name='Обо мне')  # Доп информация о человеке
 
     class Meta:
-        verbose_name = 'Резюме'
+        """Class docstring?"""
+        verbose_name = 'Резюме'  # 'Резюме' dublication 4 times. Make constant? 'Вид занятости' - 3 times.
         verbose_name_plural = 'Резюме'
 
     def __str__(self):
@@ -72,9 +80,10 @@ class Experience(CustomBaseModel):
     started_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата начала')  # Дата начала работы
     finished_at = models.DateTimeField(auto_now=True, verbose_name='Дата окончания',
                                        blank=True)  # Дата окончания работы (либо по текущий момент)
-
+    """Line 72, 73, 75, 76 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     # TODO поправить автоназначение started_at и finished_at
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Предыдущее место работы'
         verbose_name_plural = 'Предыдущие места работы'
 
@@ -88,6 +97,7 @@ class LanguageLevel(CustomBaseModel):
                             max_length=25)  # Название уровня владения языком
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Уровень владения языком'
         verbose_name_plural = 'Уровни владения языком'
 
@@ -100,6 +110,7 @@ class Language(CustomBaseModel):
     name = models.CharField(unique=True, verbose_name='Язык', max_length=25)  # Название языка
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Язык'
         verbose_name_plural = 'Языки'
 
@@ -113,9 +124,11 @@ class ResumeLanguageLevel(CustomBaseModel):
                                related_name='resumeLanguageLevels')  # Пользователь, подавший резюме
     language = models.ForeignKey(Language, verbose_name='Название языка', on_delete=models.CASCADE,
                                  related_name='userLanguages')  # Уровень владения языком
+    """Line 121 too long. https://peps.python.org/pep-0008/#maximum-line-length"""
     level = models.ForeignKey(LanguageLevel, verbose_name='Уровень владения', on_delete=models.CASCADE,
                               related_name='userLevels')  # Уровень владения языком
 
     class Meta:
+        """Class docstring?"""
         verbose_name = 'Язык пользователя'
         verbose_name_plural = 'Языки пользователя'
