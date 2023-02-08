@@ -9,8 +9,8 @@ class CustomUserModelSerializer(ModelSerializer):
     class Meta:  # Too few public methods.
         """Class docstring?"""
         model = CustomUser
-        # fields = '__all__'
-        exclude = 'id',  # Trailing comma tuple.
+        exclude = 'password', 'last_login', 'is_superuser', 'groups', 'user_permissions'
+
 
 
 class LanguageLevelModelSerializer(ModelSerializer):

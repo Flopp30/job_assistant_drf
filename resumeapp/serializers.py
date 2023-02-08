@@ -11,7 +11,7 @@ class EmploymentModelSerializer(ModelSerializer):
     class Meta:  # Too few public methods. Refactor?
         """Class docstring?"""
         model = Employment
-        fields = '__all__'
+        exclude = 'created_at', 'updated_at', 'deleted', 'id'
 
 
 class ScheduleModelSerializer(ModelSerializer):
@@ -19,7 +19,7 @@ class ScheduleModelSerializer(ModelSerializer):
     class Meta:
         """Class docstring?"""
         model = Schedule
-        fields = '__all__'
+        exclude = 'created_at', 'updated_at', 'deleted', 'id'
 
 
 class KeySkillModelSerializer(ModelSerializer):
@@ -27,7 +27,7 @@ class KeySkillModelSerializer(ModelSerializer):
     class Meta:
         """Class docstring?"""
         model = KeySkill
-        fields = '__all__'
+        exclude = 'created_at', 'updated_at', 'deleted', 'id'
 
 
 class LanguageLevelModelSerializer(ModelSerializer):
@@ -35,7 +35,7 @@ class LanguageLevelModelSerializer(ModelSerializer):
     class Meta:
         """Class docstring?"""
         model = LanguageLevel
-        fields = '__all__'
+        fields = 'name',
 
 
 class LanguageModelSerializer(ModelSerializer):
@@ -43,7 +43,7 @@ class LanguageModelSerializer(ModelSerializer):
     class Meta:
         """Class docstring?"""
         model = Language
-        fields = '__all__'
+        fields = 'name',
 
 
 class ResumeLanguageLevelModelSerializer(ModelSerializer):
@@ -54,7 +54,7 @@ class ResumeLanguageLevelModelSerializer(ModelSerializer):
     class Meta:
         """Class docstring?"""
         model = ResumeLanguageLevel
-        fields = '__all__'
+        exclude = 'created_at', 'updated_at', 'deleted', 'id', 'resume'
 
 
 class ExperienceModelSerializer(ModelSerializer):
@@ -62,7 +62,7 @@ class ExperienceModelSerializer(ModelSerializer):
     class Meta:
         """Class docstring?"""
         model = Experience
-        fields = '__all__'
+        exclude = 'created_at', 'updated_at', 'deleted', 'id', 'resume'
 
 
 class ResumeModelSerializer(ModelSerializer):
@@ -73,7 +73,6 @@ class ResumeModelSerializer(ModelSerializer):
     key_skills = KeySkillModelSerializer(many=True)
     resumeLanguageLevels = ResumeLanguageLevelModelSerializer(many=True)
     experiences = ExperienceModelSerializer(many=True)
-
 
     class Meta:
         """Class docstring?"""
