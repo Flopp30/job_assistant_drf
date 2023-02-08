@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # other
     'rest_framework',
     'django_filters',
+    'rest_framework.authtoken',
     
     # myapp
     'userapp',
@@ -151,9 +152,8 @@ AUTH_USER_MODEL = 'userapp.CustomUser'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
-        """Delete unused comments out of code?"""
-        # 'djangorestframework_camel_case.render.CamelCaseJSONRenderer',
-        # 'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer',
+        'djangorestframework_camel_case.render.CamelCaseJSONRenderer',
+        'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer',
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),
@@ -161,11 +161,18 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
 
-    # 'DEFAULT_PARSER_CLASSES': (
-    #     'djangorestframework_camel_case.parser.CamelCaseFormParser',
-    #     'djangorestframework_camel_case.parser.CamelCaseMultiPartParser',
-    #     'djangorestframework_camel_case.parser.CamelCaseJSONParser',
-    # ),
+    'DEFAULT_PARSER_CLASSES': (
+        'djangorestframework_camel_case.parser.CamelCaseFormParser',
+        'djangorestframework_camel_case.parser.CamelCaseMultiPartParser',
+        'djangorestframework_camel_case.parser.CamelCaseJSONParser',
+    ),
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 100,
 }
